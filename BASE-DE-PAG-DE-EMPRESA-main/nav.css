@@ -1,0 +1,80 @@
+/* =====================================================
+   NAV.CSS — Header compartido para todas las secciones
+   ===================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 70px !important;
+    padding: 0 5%;
+    box-sizing: border-box;
+    background: rgba(10, 10, 10, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 !important;
+}
+
+/* Logo: imagen + texto lado a lado */
+header .logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.05em;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+header .logo a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: inherit;
+    text-decoration: none;
+}
+
+header .logo img {
+    height: 42px;
+    width: auto;
+    border-radius: 6px;
+    display: block;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .logo img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.35);
+}
+
+header .logo span {
+    white-space: nowrap;
+}
+
+/* Nav: botones con fondo sutil */
+header nav {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header nav a.btn {
+    font-family: "Questrial", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif !important;
+    font-size: 16px !important;
+    padding: 10px 20px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0px !important;
+    border: 2px solid #051c2e !important;
+    border-radius: 5px !important;
+    color: #fff !important;
+    background-color: transparent !important;
+}

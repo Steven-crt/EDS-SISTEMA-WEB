@@ -1,0 +1,368 @@
+/* contactos.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+.contact-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 80px);
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-title {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+/* CARDS WRAPPER */
+#cards {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* SINGLE CARD */
+.card {
+    min-width: 280px;
+    height: 400px;
+    flex: 1 1 280px;
+    max-width: 330px;
+    position: relative;
+    border-radius: 24px;
+    background-color: #0E0E10; /* Darker background to let electric border pop */
+    cursor: pointer;
+}
+
+.card-instagram {
+    --hover-color: 348 80% 60%;
+    --electric-border-color: #e1306c;
+}
+.card-github {
+    --hover-color: 0 0% 100%;
+    --electric-border-color: #ffffff;
+}
+.card-whatsapp {
+    --hover-color: 142 70% 49%; /* Verde WhatsApp (#25D366) */
+    --electric-border-color: #25D366;
+}
+.card-facebook {
+    --hover-color: 214 89% 52%;
+    --electric-border-color: #1877F2;
+}
+.card-gmail {
+    --hover-color: 11 81% 54%; /* Rojo Gmail aproximado */
+    --electric-border-color: #ea4335;
+}
+
+
+/* SPOTLIGHT HOVER FOR CARD CONTENTS */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        hsl(var(--hover-color) / 0.15),
+        transparent 40%
+    );
+    border-radius: inherit;
+    opacity: 0;
+    z-index: 2;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+#cards:hover > .card::before {
+    opacity: 1;
+}
+
+/* SPOTLIGHT BORDER EFFECT FROM SOCIAL MEDIA CARD HOVER (Original Glow) */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: -1.5px;
+    background: radial-gradient(
+        400px circle at var(--mouse-x) var(--mouse-y),
+        hsl(var(--hover-color) / 0.5),
+        transparent 40%
+    );
+    border-radius: 25px;
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+#cards:hover > .card::after {
+    opacity: 1;
+}
+
+/* MASKING FOR THE SPOTLIGHT BORDER TO ONLY SHOW EDGES */
+.card-bg-mask {
+    position: absolute;
+    inset: 1px;
+    background-color: #0E0E10;
+    border-radius: 23px;
+    z-index: 1;
+}
+
+/* ======= ANIMATED ELECTRIC BORDER ======= */
+.inner-container {
+    position: absolute;
+    inset: 0; /* the exact boundary of the card */
+    z-index: 3; /* above the mask, below content */
+    pointer-events: none;
+}
+
+.border-outer {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(255, 255, 255, 0.05); /* very subtle default ring */
+    border-radius: 24px;
+    padding-right: 4px;
+    padding-bottom: 4px;
+    box-sizing: border-box;
+}
+
+.card-instagram .border-outer { border-color: rgba(225, 48, 108, 0.15); }
+.card-github .border-outer { border-color: rgba(255, 255, 255, 0.1); }
+.card-whatsapp .border-outer { border-color: rgba(37, 211, 102, 0.15); }
+.card-facebook .border-outer { border-color: rgba(24, 119, 242, 0.15); }
+.card-gmail .border-outer { border-color: rgba(234, 67, 53, 0.15); }
+
+.main-card {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    border: 2px solid var(--electric-border-color);
+    margin-top: -2px;
+    margin-left: -2px;
+    box-sizing: border-box;
+    filter: url(#turbulent-displace);
+}
+
+.glow-layer-1, .glow-layer-2 {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    pointer-events: none;
+    box-sizing: border-box;
+}
+
+.glow-layer-1 {
+    border: 3px solid var(--electric-border-color);
+    filter: blur(8px);
+    opacity: 0.5;
+}
+
+.glow-layer-2 {
+    border: 1px solid var(--electric-border-color);
+    filter: blur(2px);
+    opacity: 0.8;
+}
+
+/* CONTENT CONTAINER */
+.card_content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    z-index: 10; /* Highest to be interactive and visible */
+    border-radius: 24px;
+}
+
+.card_content > i {
+    font-size: 5.5rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: color 0.4s, transform 0.4s;
+}
+
+.card:hover .card_content > i {
+    color: hsl(var(--hover-color));
+    transform: scale(1.1) translateY(-5px);
+}
+
+.card_content > h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.card_content > p {
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.card_content > p > span {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.card_content > a, .btn-correo {
+    width: 80%;
+    padding-block: 0.8rem;
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.card_content > a:hover, .btn-correo:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid hsl(var(--hover-color) / 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px hsl(var(--hover-color) / 0.2);
+}
+
+/* ================= MODAL STYLES ================= */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    display: none; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.show {
+    opacity: 1;
+}
+
+.modal-container {
+    background: linear-gradient(135deg, #1A1A1E 0%, #101012 100%);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    transform: translateY(20px);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.show .modal-container {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: #999;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #ea4335;
+}
+
+.modal-title {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 1.8rem;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.modal-desc {
+    color: #aaa;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.modal-form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-form label {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: #ccc;
+    font-weight: 500;
+}
+
+.modal-form input, .modal-form textarea {
+    background-color: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 12px 15px;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s;
+    outline: none;
+}
+
+.modal-form input:focus, .modal-form textarea:focus {
+    border-color: #ea4335;
+    background-color: rgba(255,255,255,0.1);
+}
+
+.modal-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.modal-submit-btn {
+    width: 100%;
+    background-color: #ea4335;
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-top: 10px;
+}
+
+.modal-submit-btn:hover {
+    background-color: #ff584a;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(234, 67, 53, 0.4);
+}

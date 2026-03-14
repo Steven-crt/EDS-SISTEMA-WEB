@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empresa - EDI Edificaciones Inteligentes</title>
+    <!-- Fuente industrial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos base del proyecto (header, nav, botones) -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Header compartido (igual en todas las páginas) -->
+    <link rel="stylesheet" href="../nav.css">
+    <!-- Estilos propios de esta página -->
+    <link rel="stylesheet" href="empresa.css">
+</head>
+<body>
+
+    <!-- ========== HEADER / NAV (misma estructura del proyecto) ========== -->
+    <header>
+        <div class="logo">
+            <a href="../index.html" style="color: inherit; text-decoration: none;">
+                <img src="../images/logo.png" alt="Logo EDI">
+                <span>EDI EDIFICACIONES INTELIGENTES</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html"              class="btn btn__empresa"  >Empresa</a>
+            <a href="../socios/index.html"    class="btn btn__socios" >Socios</a>
+            <a href="../obras/index.html"     class="btn btn__obras" >Obras</a>
+            <a href="../contactos/index.html" class="btn btn__contacto"  >Contacto</a>
+        </nav>
+    </header>
+
+    <!-- ========== HERO BANNER ========== -->
+    <section class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-line"></span>
+                <span>EDIFICACIONES INTELIGENTES</span>
+                <span class="badge-line"></span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">QUIÉNES</span>
+                <span class="title-line accent">SOMOS</span>
+            </h1>
+            <p class="hero-desc">
+                Más de una década transformando el sector de la construcción<br>
+                con tecnología, innovación y excelencia.
+            </p>
+            <div class="hero-cta">
+                <a href="#about" class="cta-btn primary">Conócenos ↓</a>
+                <a href="../contactos/index.html" class="cta-btn ghost">Contáctanos</a>
+            </div>
+        </div>
+        <!-- Decoración angular tipo construcción -->
+        <div class="hero-angle"></div>
+    </section>
+
+    <!-- ========== ABOUT / QUIÉNES SOMOS ========== -->
+    <section class="about-section" id="about">
+        <div class="about-inner">
+
+            <!-- Bloque izquierdo: imagen / logo grande -->
+            <div class="about-visual">
+                <div class="about-frame">
+                    <img src="../images/logo_empresa-Photoroom.png" alt="EDI Logo" class="about-logo">
+                    <div class="frame-corner tl"></div>
+                    <div class="frame-corner tr"></div>
+                    <div class="frame-corner bl"></div>
+                    <div class="frame-corner br"></div>
+                </div>
+                <!-- Badge de experiencia -->
+                <div class="exp-badge">
+                    <span class="exp-num">10+</span>
+                    <span class="exp-text">años de<br>experiencia</span>
+                </div>
+            </div>
+
+            <!-- Bloque derecho: texto -->
+            <div class="about-text">
+                <span class="tag-label">// SOBRE LA EMPRESA</span>
+                <h2>Construimos con <br><span class="hl">inteligencia</span> y precisión</h2>
+                <p>
+                    EDI Edificaciones Inteligentes nació con la misión de elevar los estándares
+                    del sector constructivo. Combinamos ingeniería de vanguardia con materiales
+                    de alta calidad para entregar proyectos que no solo cumplen, sino que superan
+                    las expectativas de nuestros clientes.
+                </p>
+                <p>
+                    Desde residencias hasta complejos comerciales, cada obra lleva nuestra firma:
+                    diseño inteligente, eficiencia estructural y compromiso total.
+                </p>
+                <ul class="about-checks">
+                    <li><span class="check-icon">✔</span> Diseño arquitectónico personalizado</li>
+                    <li><span class="check-icon">✔</span> Gestión de obra integral</li>
+                    <li><span class="check-icon">✔</span> Materiales certificados</li>
+                    <li><span class="check-icon">✔</span> Cumplimiento de plazos garantizado</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ========== SERVICIOS / ESPECIALIDADES ========== -->
+    <section class="services-section">
+        <div class="services-inner">
+            <div class="section-header">
+                <span class="tag-label">// NUESTRAS ESPECIALIDADES</span>
+                <h2>Lo que <span class="hl">hacemos</span></h2>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card" data-delay="0">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="40" width="48" height="8" rx="2" fill="currentColor" opacity=".3"/>
+                            <rect x="20" y="24" width="8" height="16" rx="1" fill="currentColor" opacity=".6"/>
+                            <rect x="36" y="16" width="8" height="24" rx="1" fill="currentColor" opacity=".6"/>
+                            <polygon points="8,40 32,10 56,40" fill="currentColor" opacity=".15"/>
+                            <line x1="8" y1="48" x2="56" y2="48" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Diseño y Planificación</h3>
+                    <p>Planos, renders y planificación 3D de cada proyecto antes de poner el primer ladrillo.</p>
+                    <div class="card-bar"></div>
+                </div>
+
+                <div class="service-card" data-delay="1">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="28" width="44" height="26" rx="2" fill="currentColor" opacity=".25"/>
+                            <rect x="24" y="36" width="16" height="18" rx="1" fill="currentColor" opacity=".5"/>
+                            <rect x="10" y="24" width="44" height="6" rx="1" fill="currentColor" opacity=".5"/>
+                            <polygon points="6,24 32,8 58,24" fill="currentColor" opacity=".4"/>
+                        </svg>
+                    </div>
+                    <h3>Construcción Residencial</h3>
+                    <p>Casas y apartamentos diseñados para la vida moderna, con materiales de primera calidad.</p>
+                    <div class="card-bar"></div>
+                </div>
+
+                <div class="service-card" data-delay="2">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="16" width="48" height="36" rx="2" fill="currentColor" opacity=".2"/>
+                            <rect x="16" y="24" width="12" height="12" rx="1" fill="currentColor" opacity=".5"/>
+                            <rect x="36" y="24" width="12" height="12" rx="1" fill="currentColor" opacity=".5"/>
+                            <rect x="16" y="40" width="32" height="8" rx="1" fill="currentColor" opacity=".4"/>
+                            <line x1="8" y1="16" x2="56" y2="16" stroke="currentColor" stroke-width="3"/>
+                        </svg>
+                    </div>
+                    <h3>Obras Comerciales</h3>
+                    <p>Centros comerciales, oficinas e industrias con sistemas inteligentes integrados.</p>
+                    <div class="card-bar"></div>
+                </div>
+
+                <div class="service-card" data-delay="3">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="32" cy="32" r="20" fill="currentColor" opacity=".15"/>
+                            <path d="M22 32 Q32 16 42 32 Q32 48 22 32Z" fill="currentColor" opacity=".4"/>
+                            <circle cx="32" cy="32" r="6" fill="currentColor" opacity=".7"/>
+                            <line x1="32" y1="8" x2="32" y2="14" stroke="currentColor" stroke-width="2"/>
+                            <line x1="32" y1="50" x2="32" y2="56" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="32" x2="14" y2="32" stroke="currentColor" stroke-width="2"/>
+                            <line x1="50" y1="32" x2="56" y2="32" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Edificaciones Inteligentes</h3>
+                    <p>Domótica, sistemas de energía renovable y automatización para el futuro.</p>
+                    <div class="card-bar"></div>
+                </div>
+
+                <div class="service-card" data-delay="4">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 52 L12 20 L32 10 L52 20 L52 52" fill="currentColor" opacity=".15"/>
+                            <path d="M12 20 L32 10 L52 20" fill="none" stroke="currentColor" stroke-width="2.5"/>
+                            <line x1="12" y1="52" x2="52" y2="52" stroke="currentColor" stroke-width="2.5"/>
+                            <rect x="26" y="38" width="12" height="14" rx="1" fill="currentColor" opacity=".5"/>
+                            <rect x="18" y="28" width="10" height="10" rx="1" fill="currentColor" opacity=".4"/>
+                            <rect x="36" y="28" width="10" height="10" rx="1" fill="currentColor" opacity=".4"/>
+                        </svg>
+                    </div>
+                    <h3>Remodelaciones</h3>
+                    <p>Transformamos espacios existentes con acabados premium y diseño actualizado.</p>
+                    <div class="card-bar"></div>
+                </div>
+
+                <div class="service-card" data-delay="5">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M16 48 L16 24 L32 12 L48 24 L48 48" stroke="currentColor" stroke-width="2" fill="currentColor" opacity=".1"/>
+                            <circle cx="32" cy="30" r="8" fill="currentColor" opacity=".3"/>
+                            <path d="M28 30 L32 26 L36 30 L32 34Z" fill="currentColor" opacity=".8"/>
+                            <line x1="32" y1="18" x2="32" y2="22" stroke="currentColor" stroke-width="2"/>
+                            <line x1="40" y1="22" x2="37" y2="25" stroke="currentColor" stroke-width="2"/>
+                            <line x1="24" y1="22" x2="27" y2="25" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3>Consultoría e Ingeniería</h3>
+                    <p>Asesoría técnica, cálculo estructural y acompañamiento en cada etapa del proyecto.</p>
+                    <div class="card-bar"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ESTADÍSTICAS ========== -->
+    <section class="stats-section">
+        <div class="stats-tape">
+            <div class="stats-inner">
+                <div class="stat-block">
+                    <span class="s-num" data-target="10">0</span><span class="s-plus">+</span>
+                    <span class="s-label">Años de experiencia</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-block">
+                    <span class="s-num" data-target="150">0</span><span class="s-plus">+</span>
+                    <span class="s-label">Proyectos completados</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-block">
+                    <span class="s-num" data-target="80">0</span><span class="s-plus">+</span>
+                    <span class="s-label">Clientes satisfechos</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-block">
+                    <span class="s-num" data-target="25">0</span><span class="s-plus">+</span>
+                    <span class="s-label">Profesionales</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== MISIÓN / VISIÓN / VALORES ========== -->
+    <section class="mvv-section">
+        <div class="mvv-inner">
+            <div class="section-header">
+                <span class="tag-label">// ADN DE LA EMPRESA</span>
+                <h2>Lo que nos <span class="hl">define</span></h2>
+            </div>
+            <div class="mvv-grid">
+                <div class="mvv-card orange">
+                    <div class="mvv-icon">⚡</div>
+                    <h3>Misión</h3>
+                    <p>Ofrecer soluciones constructivas integrales que superen las expectativas, garantizando calidad, seguridad e innovación en cada proyecto.</p>
+                </div>
+                <div class="mvv-card blue">
+                    <div class="mvv-icon">🔭</div>
+                    <h3>Visión</h3>
+                    <p>Ser la empresa constructora más innovadora de la región, liderando la transformación del sector con edificaciones inteligentes y sostenibles.</p>
+                </div>
+                <div class="mvv-card green">
+                    <div class="mvv-icon">🛡️</div>
+                    <h3>Valores</h3>
+                    <p>Integridad, excelencia, compromiso con el cliente y responsabilidad ambiental son los pilares que guían cada decisión de la empresa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA FINAL ========== -->
+    <section class="cta-section">
+        <div class="cta-inner">
+            <h2>¿Listo para construir tu proyecto?</h2>
+            <p>Nuestro equipo está listo para hacer realidad tu próxima obra.</p>
+            <a href="../contactos/index.html" class="cta-btn primary large">Contactar ahora →</a>
+        </div>
+    </section>
+
+    <script src="empresa.js"></script>
+</body>
+</html>
