@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap');
+
+/* ═══════════════════════════════════════════════
+   TIPOGRAFÍA — OBRAS CIVILES
+═══════════════════════════════════════════════ */
+
+.carousel .list .item .introduce,
+.carousel .list .item .detail {
+    font-family: 'Barlow', sans-serif;
+}
+
+/* TAG / CATEGORÍA */
+.carousel .list .item .introduce .tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(9px, 1vw, 11px);
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #f0b429;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* TÍTULO PRINCIPAL */
+.carousel .list .item .introduce .title,
+.carousel .list .item .detail .title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.85);
+}
+
+.carousel .list .item .introduce .title {
+    font-size: clamp(28px, 4vw, 65px);
+    line-height: 1.15;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.carousel .list .item .detail .title {
+    font-size: clamp(22px, 2.8vw, 38px);
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO — cliente/entidad */
+.carousel .list .item .introduce .topic {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(11px, 1.1vw, 14px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* DESCRIPCIÓN */
+.carousel .list .item .introduce .des,
+.carousel .list .item .detail .des {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.88);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.carousel .list .item .introduce .des {
+    font-size: clamp(12px, 1.1vw, 16px);
+}
+
+.carousel .list .item .detail .des {
+    font-size: clamp(13px, 1.2vw, 16px);
+}
+
+/* BOTÓN VER OBRA */
+button.seeMore {
+    margin-top: 18px;
+    padding: 10px 25px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(10px, 1vw, 12px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    backdrop-filter: blur(6px);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+button.seeMore .icon {
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+button.seeMore:hover {
+    background: #f0b429;
+    color: #111;
+    border-color: #f0b429;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240,180,41,0.4);
+}
+button.seeMore:hover .icon {
+    transform: translateX(5px);
+}
+
+/* ═══════════════════════════════════════════════
+   IMAGEN — solo separación visual, sin tocar el layout
+═══════════════════════════════════════════════ */
+
+.carousel .list .item img {
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.65));
+    /* NO tocamos position, left, width ni transform
+       para no romper las animaciones del carrusel original */
+}
+
+/* Estilos para la imagen de alerta (reemplaza auriculares) */
+.carousel .list .item .alert-image {
+    border-radius: 15px;
+    border: 3px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(240,180,41,0.3), inset 0 0 30px rgba(0,0,0,0.2);
+    animation: pulseShadow 3s ease-in-out infinite;
+    backdrop-filter: blur(5px);
+    /* Mantener las transformaciones originales del carrusel */
+    transform: translateY(-50%);
+}
+
+@keyframes pulseShadow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(240,180,41,0.3), inset 0 0 30px rgba(0,0,0,0.2);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(240,180,41,0.5), inset 0 0 40px rgba(0,0,0,0.1);
+    }
+}
+
+/* Efecto de brillo al pasar el ratón */
+.carousel .list .item .alert-image {
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.carousel .list .item .alert-image:hover {
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 0 0 30px rgba(240,180,41,0.6), inset 0 0 50px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transform: translateY(-50%) scale(1.05);
+}
+
+/* ═══════════════════════════════════════════════
+   FICHAS TÉCNICAS — grid 3 columnas
+═══════════════════════════════════════════════ */
+
+.carousel .list .item .detail .specifications {
+    margin-top: 14px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    /* Resetear cualquier flex del CSS original */
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+}
+
+.carousel .list .item .detail .specifications > div {
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: 2px solid #f0b429 !important;
+    padding: 10px 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    background: rgba(255,255,255,0.07) !important;
+    border-radius: 6px !important;
+    gap: 3px !important;
+}
+
+.carousel .list .item .detail .specifications p:first-child {
+    font-family: 'Barlow', sans-serif !important;
+    font-size: 11px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.6) !important;
+    text-shadow: none !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.carousel .list .item .detail .specifications p:last-child {
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: clamp(16px, 1.5vw, 20px) !important;
+    font-weight: 700 !important;
+    color: #f0b429 !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+}
+
+/* BOTONES DE ACCIÓN */
+.checkout {
+    margin-top: 14px !important;
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+}
+
+.checkout button {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(11px, 1vw, 13px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    margin-top: 0;
+    transform: scale(1);
+}
+
+.checkout button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.checkout .btn-ficha {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+.checkout .btn-ficha:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+    border-color: #fff;
+    box-shadow: 0 6px 20px rgba(255,255,255,0.2);
+}
+
+.checkout .btn-contacto {
+    background: linear-gradient(135deg, #f0b429, #d4a020);
+    color: #111;
+    box-shadow: 0 4px 15px rgba(240,180,41,0.4);
+}
+.checkout .btn-contacto:hover {
+    background: linear-gradient(135deg, #d4a020, #c09020);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240,180,41,0.6);
+}

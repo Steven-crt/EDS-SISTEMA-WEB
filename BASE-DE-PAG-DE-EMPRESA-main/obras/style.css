@@ -1,28 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap');
 
-/* ═══════════════════════════════════════════════
-   TIPOGRAFÍA — OBRAS CIVILES
-═══════════════════════════════════════════════ */
-
 .carousel .list .item .introduce,
 .carousel .list .item .detail {
     font-family: 'Barlow', sans-serif;
 }
 
-/* TAG / CATEGORÍA */
 .carousel .list .item .introduce .tag {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: clamp(10px, 1.1vw, 13px);
+    font-size: clamp(9px, 1vw, 11px);
     font-weight: 600;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: #f0b429;
     text-shadow: 0 2px 6px rgba(0,0,0,0.8);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: block;
 }
 
-/* TÍTULO PRINCIPAL */
 .carousel .list .item .introduce .title,
 .carousel .list .item .detail .title {
     font-family: 'Barlow Condensed', sans-serif;
@@ -33,130 +27,365 @@
 }
 
 .carousel .list .item .introduce .title {
-    font-size: clamp(36px, 5.5vw, 82px);
-    line-height: 0.92;
-    letter-spacing: -1px;
-    margin-bottom: 14px;
+    font-size: clamp(28px, 4vw, 65px);
+    line-height: 1.15;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-align: left;
 }
 
 .carousel .list .item .detail .title {
-    font-size: clamp(22px, 2.8vw, 38px);
-    line-height: 1.05;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
+    font-size: clamp(18px, 2.2vw, 26px);
+    line-height: 1.1;
+    margin-bottom: 0;
 }
 
-/* SUBTÍTULO — cliente/entidad */
 .carousel .list .item .introduce .topic {
     font-family: 'Barlow', sans-serif;
-    font-size: clamp(12px, 1.2vw, 15px);
+    font-size: clamp(11px, 1.1vw, 14px);
     font-weight: 400;
     color: rgba(255,255,255,0.8);
     text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     font-style: italic;
 }
 
-/* DESCRIPCIÓN */
 .carousel .list .item .introduce .des,
 .carousel .list .item .detail .des {
     font-family: 'Barlow', sans-serif;
     font-weight: 300;
-    line-height: 1.65;
+    line-height: 1.6;
     color: rgba(255,255,255,0.88);
     text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
 
 .carousel .list .item .introduce .des {
-    font-size: clamp(12px, 1.1vw, 15px);
+    font-size: clamp(12px, 1.1vw, 16px);
 }
 
 .carousel .list .item .detail .des {
-    font-size: clamp(11px, 1vw, 13px);
+    font-size: clamp(11px, 1.1vw, 14px);
 }
 
-/* BOTÓN VER OBRA */
 button.seeMore {
-    margin-top: 22px;
-    padding: 11px 28px;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.6);
-    border-radius: 4px;
-    color: #fff;
+    margin-top: 18px;
+    padding: 12px 30px;
+    background: rgba(240, 180, 41, 0.08);
+    border: 1.5px solid rgba(240, 180, 41, 0.5);
+    border-radius: 30px;
+    color: #f0b429;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: clamp(12px, 1.1vw, 14px);
+    font-size: clamp(11px, 1vw, 13px);
     letter-spacing: 3px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    backdrop-filter: blur(6px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    box-shadow: 0 4px 20px rgba(240, 180, 41, 0.15),
+                inset 0 1px 0 rgba(255,255,255,0.1);
 }
 button.seeMore .icon {
     font-size: 1.1em;
     transition: transform 0.3s ease;
 }
 button.seeMore:hover {
-    background: #f0b429;
+    background: linear-gradient(135deg, #f0b429, #ff6b00);
+    border-color: transparent;
     color: #111;
-    border-color: #f0b429;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(240,180,41,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(240, 180, 41, 0.55);
+    letter-spacing: 4px;
 }
 button.seeMore:hover .icon {
     transform: translateX(5px);
 }
 
-/* ═══════════════════════════════════════════════
-   IMAGEN — solo separación visual, sin tocar el layout
-═══════════════════════════════════════════════ */
-
 .carousel .list .item img {
     filter: drop-shadow(0 20px 50px rgba(0,0,0,0.65));
-    /* NO tocamos position, left, width ni transform
-       para no romper las animaciones del carrusel original */
 }
 
-/* ═══════════════════════════════════════════════
-   FICHAS TÉCNICAS — grid 3 columnas
-═══════════════════════════════════════════════ */
+.carousel .list .item .alert-image {
+    border-radius: 15px;
+    border: 3px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 20px rgba(240,180,41,0.3), inset 0 0 30px rgba(0,0,0,0.2);
+    animation: pulseShadow 3s ease-in-out infinite;
+    backdrop-filter: blur(5px);
+    transform: translateY(-50%);
+}
 
+@keyframes pulseShadow {
+    0%, 100% { box-shadow: 0 0 20px rgba(240,180,41,0.3), inset 0 0 30px rgba(0,0,0,0.2); }
+    50%       { box-shadow: 0 0 40px rgba(240,180,41,0.5), inset 0 0 40px rgba(0,0,0,0.1); }
+}
+
+.carousel .list .item .alert-image {
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.carousel .list .item .alert-image:hover {
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 0 0 30px rgba(240,180,41,0.6), inset 0 0 50px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transform: translateY(-50%) scale(1.05);
+}
+
+:root {
+    --carousel-gradient: linear-gradient(70deg, #f0b429, #ff6b00);
+}
+
+.carousel .list .item:nth-child(2) .introduce {
+    width: 340px;
+    left: 4%;
+}
+
+.carousel .list .item:nth-child(2) img {
+    width: 46%;
+    right: -2%;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel .list .item:nth-child(2) .introduce {
+        width: 60%;
+        left: 6%;
+    }
+    .carousel .list .item img {
+        width: 38%;
+    }
+}
+
+/* ===== VISTA DETALLADA — IMAGEN ===== */
+.carousel.showDetail .list .item:nth-child(2) img {
+    width: 38%;
+    right: 55%;
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    animation: scaleImage 0.6s ease-out forwards;
+}
+
+@keyframes scaleImage {
+    from { transform: translateY(-50%) scale(0.9); opacity: 0.8; filter: brightness(0.9); }
+    to   { transform: translateY(-50%) scale(1);   opacity: 1;   filter: brightness(1); }
+}
+
+/* =======================================================
+   *** FIX PRINCIPAL: BAJAR EL PANEL DE DETALLE ***
+   Reemplazamos top:50% + translateY(-50%) por un sistema
+   top:0 / bottom:0 con padding-top que esquiva el header.
+   El header fijo mide 70px → usamos 85px para dar respiro.
+   ======================================================= */
+.carousel.showDetail .list .item:nth-child(2) .detail {
+    width: 48%;
+    right: 2%;
+
+    top: 0 !important;
+    bottom: 0 !important;
+    transform: none !important;
+
+    /* ← CLAVE: el contenido empieza 85px desde arriba,
+       justo por debajo del header fijo */
+    padding-top: 85px !important;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    box-sizing: border-box;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    text-align: left;
+    opacity: 1;
+    pointer-events: auto;
+    display: flex !important;
+    flex-direction: column;
+    gap: 0;
+}
+
+.carousel.showDetail .list .item:nth-child(2) .detail::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.showDetail .list .item:nth-child(2) .detail .title {
+    font-size: clamp(16px, 2vw, 24px);
+    letter-spacing: 0.5px;
+}
+
+.carousel.showDetail .list .item:nth-child(2) .detail .des {
+    font-size: clamp(11px, 1.1vw, 14px);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+}
+
+/* ===== CONTENEDOR DEL DETALLE (oculto por defecto) ===== */
+.carousel .list .item .detail {
+    opacity: 0;
+    pointer-events: none;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    border-radius: 0;
+}
+
+.carousel .list .item .detail-content {
+    padding: 0;
+}
+
+/* ===== HEADER DEL DETALLE ===== */
+.carousel .list .item .detail-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.carousel .list .item .detail-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f0b429, #ff6b00);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+    box-shadow: 0 4px 15px rgba(240,180,41,0.4);
+}
+
+.carousel .list .item .detail-title-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.carousel .list .item .detail .title {
+    font-size: clamp(15px, 1.8vw, 22px);
+    line-height: 1.15;
+    margin-bottom: 4px;
+    background: linear-gradient(90deg, #fff, rgba(255,255,255,0.9));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.carousel .list .item .detail-client {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(10px, 1vw, 12px);
+    color: rgba(255,255,255,0.7);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.carousel .list .item .detail-client::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: #f0b429;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.carousel .list .item .detail-badge {
+    padding: 5px 12px;
+    background: linear-gradient(135deg, rgba(240,180,41,0.25), rgba(255,107,0,0.15));
+    border: 1px solid rgba(240,180,41,0.5);
+    border-radius: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #f0b429;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* ===== DESCRIPCIÓN ===== */
+.carousel .list .item .detail .des {
+    font-size: clamp(11px, 1.1vw, 13px);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+    padding: 12px 14px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    border-radius: 10px;
+    border-left: 3px solid #f0b429;
+}
+
+/* ===== HIGHLIGHTS ===== */
+.carousel .list .item .detail .highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.carousel .list .item .detail .highlights span {
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 15px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.85);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.carousel .list .item .detail .highlights span::before {
+    content: '✓';
+    color: #4ade80;
+    font-weight: bold;
+    font-size: 9px;
+}
+
+/* ===== SPECS GRID ===== */
 .carousel .list .item .detail .specifications {
-    margin-top: 14px !important;
     display: grid !important;
     grid-template-columns: repeat(3, 1fr) !important;
-    gap: 8px !important;
+    gap: 10px !important;
     width: 100% !important;
-    /* Resetear cualquier flex del CSS original */
-    flex-direction: unset !important;
-    flex-wrap: unset !important;
-    justify-content: unset !important;
-    align-items: unset !important;
+    margin-bottom: 10px !important;
 }
 
 .carousel .list .item .detail .specifications > div {
-    border-top: none !important;
-    border-bottom: none !important;
-    border-right: none !important;
-    border-left: 2px solid #f0b429 !important;
-    padding: 10px 12px !important;
+    border: none !important;
+    padding: 12px 8px !important;
     display: flex !important;
     flex-direction: column !important;
-    align-items: flex-start !important;
-    justify-content: flex-start !important;
-    background: rgba(255,255,255,0.07) !important;
-    border-radius: 6px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04)) !important;
+    border-radius: 12px !important;
     gap: 3px !important;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.08) !important;
 }
 
-.carousel .list .item .detail .specifications p:first-child {
+.carousel .list .item .detail .specifications > div:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(240,180,41,0.2);
+    border-color: rgba(240,180,41,0.3) !important;
+}
+
+.carousel .list .item .detail .specifications .spec-icon {
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.carousel .list .item .detail .specifications .spec-label {
     font-family: 'Barlow', sans-serif !important;
     font-size: 9px !important;
     font-weight: 500 !important;
-    letter-spacing: 1.5px !important;
+    letter-spacing: 1px !important;
     text-transform: uppercase !important;
     color: rgba(255,255,255,0.5) !important;
     text-shadow: none !important;
@@ -164,55 +393,355 @@ button.seeMore:hover .icon {
     line-height: 1.2 !important;
 }
 
-.carousel .list .item .detail .specifications p:last-child {
+.carousel .list .item .detail .specifications .spec-value {
     font-family: 'Barlow Condensed', sans-serif !important;
-    font-size: clamp(14px, 1.3vw, 18px) !important;
+    font-size: clamp(13px, 1.2vw, 16px) !important;
     font-weight: 700 !important;
     color: #f0b429 !important;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.4) !important;
     margin: 0 !important;
     line-height: 1.1 !important;
 }
 
-/* BOTONES DE ACCIÓN */
+/* ===== PROGRESS BAR ===== */
+.carousel .list .item .detail .progress-section {
+    margin-bottom: 12px;
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.carousel .list .item .detail .progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.carousel .list .item .detail .progress-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carousel .list .item .detail .progress-percent {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #f0b429;
+}
+
+.carousel .list .item .detail .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.carousel .list .item .detail .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f0b429, #ff6b00);
+    border-radius: 8px;
+    transition: width 1s ease;
+    box-shadow: 0 0 12px rgba(240,180,41,0.5);
+}
+
+/* ===== SOCIOS ===== */
+.carousel .list .item .obra-socios {
+    margin-bottom: 12px;
+    padding: 12px;
+    background: linear-gradient(135deg, rgba(240,180,41,0.1), rgba(255,107,0,0.05));
+    border-radius: 12px;
+    border: 1px solid rgba(240,180,41,0.2);
+}
+
+.carousel .list .item .socios-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(11px, 1.2vw, 13px);
+    color: #f0b429;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carousel .list .item .socios-title::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: linear-gradient(90deg, #f0b429, #ff6b00);
+}
+
+.carousel .list .item .socios-nombres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(10px, 1vw, 12px);
+    color: rgba(255,255,255,0.85);
+}
+
+.carousel .list .item .socios-nombres span {
+    background: rgba(240,180,41,0.12);
+    padding: 4px 10px;
+    border-radius: 15px;
+    border: 1px solid rgba(240,180,41,0.3);
+}
+
+.carousel:not(.showDetail) .obra-socios {
+    display: none;
+}
+
+/* ===== BOTONES ===== */
 .checkout {
-    margin-top: 14px !important;
     display: flex !important;
     gap: 10px !important;
     flex-wrap: wrap !important;
+    margin-top: 0 !important;
 }
 
 .checkout button {
     border: none;
-    padding: 10px 22px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 8px;
     font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
     font-size: clamp(11px, 1vw, 13px);
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.25s ease;
-    margin-top: 0;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.checkout button:hover {
+    transform: translateY(-2px);
 }
 
 .checkout .btn-ficha {
-    background: rgba(255,255,255,0.1);
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.05));
     color: #fff;
-    border: 1px solid rgba(255,255,255,0.35);
+    border: 1px solid rgba(255,255,255,0.3);
     backdrop-filter: blur(4px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 .checkout .btn-ficha:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: #fff;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.1));
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 6px 20px rgba(255,255,255,0.15);
 }
 
 .checkout .btn-contacto {
-    background: #f0b429;
+    background: linear-gradient(135deg, #f0b429, #ff6b00);
     color: #111;
+    box-shadow: 0 4px 15px rgba(240,180,41,0.4);
+    flex: 1;
 }
 .checkout .btn-contacto:hover {
-    background: #d4a020;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 14px rgba(240,180,41,0.45);
+    background: linear-gradient(135deg, #ff6b00, #e65c00);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(240,180,41,0.5);
+}
+
+/* ===== ANIMACIONES DE ENTRADA ===== */
+.carousel.showDetail .list .item:nth-child(2) .detail .detail-header,
+.carousel.showDetail .list .item:nth-child(2) .detail .des,
+.carousel.showDetail .list .item:nth-child(2) .detail .highlights,
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications,
+.carousel.showDetail .list .item:nth-child(2) .detail .progress-section,
+.carousel.showDetail .list .item:nth-child(2) .detail .obra-socios,
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout {
+    opacity: 0;
+    animation: showDetailContent 0.4s ease-out forwards;
+}
+
+.carousel.showDetail .list .item:nth-child(2) .detail .des              { animation-delay: 0.1s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .highlights        { animation-delay: 0.15s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications    { animation-delay: 0.2s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .progress-section  { animation-delay: 0.3s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .obra-socios        { animation-delay: 0.35s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout           { animation-delay: 0.4s; }
+
+@keyframes showDetailContent {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================================
+   FIX: Ocultar el checkout que genera style.css base.
+   El carrusel original duplica los botones porque
+   style.css raíz también aplica .checkout en showDetail.
+   Dejamos solo el .checkout que está dentro del .detail
+   propio de obras (el primero que aparece en el DOM).
+   =================================================== */
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout ~ .checkout {
+    display: none !important;
+}
+
+/* Por si el duplicado viene fuera del .detail */
+.carousel.showDetail .list .item:nth-child(2) > .checkout {
+    display: none !important;
+}
+
+
+/* ===== BOTONES DE NAVEGACIÓN MODERNOS ===== */
+.arrows {
+    bottom: 110px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+#prev, #next {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid rgba(240, 180, 41, 0.5) !important;
+    background: rgba(240, 180, 41, 0.08) !important;
+    color: #f0b429 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    box-shadow: 0 4px 20px rgba(240, 180, 41, 0.15),
+                inset 0 1px 0 rgba(255,255,255,0.1) !important;
+}
+
+#prev:hover, #next:hover {
+    background: rgba(240, 180, 41, 0.25) !important;
+    border-color: #f0b429 !important;
+    transform: scale(1.15) !important;
+    box-shadow: 0 6px 28px rgba(240, 180, 41, 0.45),
+                0 0 0 4px rgba(240, 180, 41, 0.12) !important;
+    color: #fff !important;
+}
+
+#prev:active, #next:active {
+    transform: scale(0.95) !important;
+}
+
+#back {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: 0 !important;
+    border: 1.5px solid rgba(240, 180, 41, 0.5) !important;
+    border-radius: 30px !important;
+    background: rgba(240, 180, 41, 0.08) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    color: #f0b429 !important;
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+    padding: 10px 28px !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    box-shadow: 0 4px 20px rgba(240, 180, 41, 0.15),
+                inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    white-space: nowrap !important;
+}
+
+#back:hover {
+    background: linear-gradient(135deg, #f0b429, #ff6b00) !important;
+    border-color: transparent !important;
+    color: #111 !important;
+    transform: translateX(-50%) translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(240, 180, 41, 0.55) !important;
+    letter-spacing: 4px !important;
+}
+
+.carousel.showDetail #back {
+    opacity: 1 !important;
+}
+
+.carousel.showDetail #prev,
+.carousel.showDetail #next {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* =======================================================
+   *** FIX: CARRUSEL A PANTALLA COMPLETA ***
+   Sobreescribe width/max-width del style.css raíz que
+   generan el cuadro invisible con espacio en blanco.
+   ======================================================= */
+
+
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 991px) {
+    .carousel.showDetail .list .item:nth-child(2) img {
+        width: 40%;
+        right: 52%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail {
+        width: 52%;
+        padding-top: 85px !important;
+    }
+    .carousel .list .item .detail .specifications {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .carousel.showDetail .list .item:nth-child(2) img {
+        width: 42%;
+        right: 50%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail {
+        width: 52%;
+        padding-top: 85px !important;
+        font-size: small;
+    }
+    .carousel .list .item .detail .specifications {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+    }
+    .carousel .list .item .detail .specifications > div {
+        padding: 10px 5px !important;
+    }
+    .carousel .list .item .detail-header {
+        flex-wrap: wrap;
+    }
+    .carousel .list .item .detail-badge {
+        order: -1;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .checkout {
+        flex-direction: column;
+    }
+    .checkout .btn-contacto {
+        width: 100%;
+        justify-content: center;
+    }
+    .carousel .list .item .detail .progress-section {
+        padding: 10px;
+    }
+    .carousel .list .item .detail .progress-bar {
+        height: 6px;
+    }
+    .carousel .list .item .detail .highlights span {
+        padding: 4px 8px;
+        font-size: 9px;
+    }
 }

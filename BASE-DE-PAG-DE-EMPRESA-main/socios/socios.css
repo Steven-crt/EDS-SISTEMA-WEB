@@ -1,4 +1,4 @@
-    /* ============================================================
+/* ============================================================
    ESTILOS PÁGINA DE SOCIOS - EDI Edificaciones Inteligentes
    ============================================================ */
 
@@ -244,6 +244,7 @@ main > p {
     z-index: 1;
 }
 
+/* ---- CARD LOGO (emoji o imagen) ---- */
 .card-logo {
     font-size: 3.2rem;
     margin-bottom: 18px;
@@ -258,6 +259,19 @@ main > p {
     animation: logoSpring 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
     transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+/* Imagen dentro del card-logo (para logos reales como Dahua) */
+.card-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    /* Fondo blanco sutil para que el logo se vea bien sobre oscuro */
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 6px;
+    box-sizing: border-box;
 }
 
 .socios-card:hover .card-logo {
@@ -418,15 +432,6 @@ main > p {
     }
 }
 
-/* ---- Categorías y estilos por tier ---- */
-.card-tier-gold .face.face2 {
-    background-image: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
-}
-
-.card-tier-silver .face.face2 {
-    background-image: linear-gradient(135deg, #00D4FF 0%, #1a3dff 55%, #3A86FF 100%);
-}
-
 @keyframes cardRise {
     from {
         opacity: 0;
@@ -438,11 +443,20 @@ main > p {
     }
 }
 
+/* ---- Categorías y estilos por tier ---- */
+.card-tier-gold .face.face2 {
+    background-image: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+}
+
+.card-tier-silver .face.face2 {
+    background-image: linear-gradient(135deg, #00D4FF 0%, #1a3dff 55%, #3A86FF 100%);
+}
+
 .card-tier-bronze .face.face2 {
     background-image: linear-gradient(135deg, #FF4365 0%, #FF6B6B 50%, #FFA502 100%);
 }
 
-/* ---- Gradientes para cada tarjeta (para variación) ---- */
+/* ---- Gradientes para cada tarjeta ---- */
 .socios-card:nth-child(1) .face.face2 {
     background-image: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
 }
@@ -645,4 +659,3 @@ main > p {
         font-size: 3.2em;
     }
 }
-
