@@ -1,59 +1,218 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@300;400;500&display=swap');
 
-/* Los estilos del encabezado se gestionan desde nav.css (compartido) */
+/* ═══════════════════════════════════════════════
+   TIPOGRAFÍA — OBRAS CIVILES
+═══════════════════════════════════════════════ */
 
-/* --- MEJORAS VISUALES AÑADIDAS PARA EL CARRUSEL --- */
-
-.carousel .list .item .introduce .title,
-.carousel .list .item .introduce .topic,
-.carousel .list .item .introduce .des,
-.carousel .list .item .detail .title,
-.carousel .list .item .detail .des,
-.carousel .list .item .detail .specifications {
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
-    color: #fff;
-    font-weight: 500;
+.carousel .list .item .introduce,
+.carousel .list .item .detail {
+    font-family: 'Barlow', sans-serif;
 }
 
-button.seeMore {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.7);
-    border-radius: 50px; 
+/* TAG / CATEGORÍA */
+.carousel .list .item .introduce .tag {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(10px, 1.1vw, 13px);
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #f0b429;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* TÍTULO PRINCIPAL */
+.carousel .list .item .introduce .title,
+.carousel .list .item .detail .title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
     color: #fff;
-    font-family: 'Montserrat', sans-serif; /* Nueva fuente moderna */
+    text-shadow: 0 4px 20px rgba(0,0,0,0.85);
+}
+
+.carousel .list .item .introduce .title {
+    font-size: clamp(36px, 5.5vw, 82px);
+    line-height: 0.92;
+    letter-spacing: -1px;
+    margin-bottom: 14px;
+}
+
+.carousel .list .item .detail .title {
+    font-size: clamp(22px, 2.8vw, 38px);
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+/* SUBTÍTULO — cliente/entidad */
+.carousel .list .item .introduce .topic {
+    font-family: 'Barlow', sans-serif;
+    font-size: clamp(12px, 1.2vw, 15px);
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    margin-bottom: 14px;
+    font-style: italic;
+}
+
+/* DESCRIPCIÓN */
+.carousel .list .item .introduce .des,
+.carousel .list .item .detail .des {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.88);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+}
+
+.carousel .list .item .introduce .des {
+    font-size: clamp(12px, 1.1vw, 15px);
+}
+
+.carousel .list .item .detail .des {
+    font-size: clamp(11px, 1vw, 13px);
+}
+
+/* BOTÓN VER OBRA */
+button.seeMore {
+    margin-top: 22px;
+    padding: 11px 28px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.6);
+    border-radius: 4px;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
     font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: clamp(12px, 1.1vw, 14px);
+    letter-spacing: 3px;
+    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    backdrop-filter: blur(5px); 
+    backdrop-filter: blur(6px);
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 button.seeMore .icon {
-    font-size: 1.2em;
+    font-size: 1.1em;
     transition: transform 0.3s ease;
 }
 button.seeMore:hover {
-    background: #fff;
-    color: #000;
-    transform: translateY(-3px); 
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); 
-    border-color: #fff;
+    background: #f0b429;
+    color: #111;
+    border-color: #f0b429;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(240,180,41,0.4);
 }
 button.seeMore:hover .icon {
-    transform: translateX(5px); /* Animación de flecha */
+    transform: translateX(5px);
+}
+
+/* ═══════════════════════════════════════════════
+   IMAGEN — solo separación visual, sin tocar el layout
+═══════════════════════════════════════════════ */
+
+.carousel .list .item img {
+    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.65));
+    /* NO tocamos position, left, width ni transform
+       para no romper las animaciones del carrusel original */
+}
+
+/* ═══════════════════════════════════════════════
+   FICHAS TÉCNICAS — grid 3 columnas
+═══════════════════════════════════════════════ */
+
+.carousel .list .item .detail .specifications {
+    margin-top: 14px !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+    /* Resetear cualquier flex del CSS original */
+    flex-direction: unset !important;
+    flex-wrap: unset !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+}
+
+.carousel .list .item .detail .specifications > div {
+    border-top: none !important;
+    border-bottom: none !important;
+    border-right: none !important;
+    border-left: 2px solid #f0b429 !important;
+    padding: 10px 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    background: rgba(255,255,255,0.07) !important;
+    border-radius: 6px !important;
+    gap: 3px !important;
+}
+
+.carousel .list .item .detail .specifications p:first-child {
+    font-family: 'Barlow', sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.5) !important;
+    text-shadow: none !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+}
+
+.carousel .list .item .detail .specifications p:last-child {
+    font-family: 'Barlow Condensed', sans-serif !important;
+    font-size: clamp(14px, 1.3vw, 18px) !important;
+    font-weight: 700 !important;
+    color: #f0b429 !important;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5) !important;
+    margin: 0 !important;
+    line-height: 1.1 !important;
+}
+
+/* BOTONES DE ACCIÓN */
+.checkout {
+    margin-top: 14px !important;
+    display: flex !important;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
 }
 
 .checkout button {
     border: none;
-    padding: 12px 20px;
-    border-radius: 20px;
-    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(11px, 1vw, 13px);
+    letter-spacing: 2px;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
+    transition: all 0.25s ease;
+    margin-top: 0;
+}
+
+.checkout .btn-ficha {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
+}
+.checkout .btn-ficha:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: #fff;
+}
+
+.checkout .btn-contacto {
+    background: #f0b429;
+    color: #111;
+}
+.checkout .btn-contacto:hover {
+    background: #d4a020;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 14px rgba(240,180,41,0.45);
 }

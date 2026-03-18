@@ -1,53 +1,92 @@
-/* ============================================================
+    /* ============================================================
    ESTILOS PÁGINA DE SOCIOS - EDI Edificaciones Inteligentes
    ============================================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Variables CSS para colores */
 :root {
     --gold: #FFD700;
     --silver: #C0C0C0;
     --bronze: #CD7F32;
-    --primary: #1a1a1a;
-    --secondary: #333;
-    --accent: #fff;
-    --text-light: #bbb;
+    --primary: #0b0d10;
+    --secondary: #141824;
+    --accent: #ffffff;
+    --text-light: rgba(255, 255, 255, 0.7);
+    --ink: #f8fafc;
+    --muted: rgba(255, 255, 255, 0.65);
+    --card: #0f131a;
+    --card-2: #171e2a;
+    --ring: rgba(255, 255, 255, 0.08);
+    --hero-glow: rgba(0, 212, 255, 0.16);
+    --cyan: #00d4ff;
+    --blue: #0000ff;
+    --amber: #ffbe0b;
+    --nav-blue: #0000ff;
+    --nav-yellow: #ffff00;
+    --nav-red: #ff0000;
 }
 
 /* ---- MAIN ---- */
 main {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 20px 80px;
-    background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+    padding: 70px 20px 90px;
+    position: relative;
+    background: radial-gradient(1100px 500px at 10% -10%, rgba(0, 212, 255, 0.16), transparent 70%),
+                radial-gradient(900px 500px at 90% -20%, rgba(255, 190, 11, 0.14), transparent 70%),
+                linear-gradient(180deg, #0a0c10 0%, #0d1118 45%, #0a0c10 100%);
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+}
+
+main::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle at 25% 20%, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 75% 30%, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 46px 46px;
+    pointer-events: none;
 }
 
 /* Hero Section */
 .hero-section {
     text-align: center;
     margin-bottom: 70px;
-    animation: fadeInDown 0.8s ease-out;
+    animation: none;
+    position: relative;
+    max-width: 820px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 18px 6px;
 }
 
 .hero-section h1 {
-    font-size: 3.2rem;
-    margin: 0 0 15px;
-    letter-spacing: -0.8px;
-    color: #000;
+    font-size: 3.4rem;
+    margin: 0 0 14px;
+    letter-spacing: -0.9px;
+    color: var(--ink);
     font-weight: 700;
-    background: linear-gradient(135deg, #000, #333);
+    background: linear-gradient(135deg, #ffffff, #9fb7ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    animation: fadeInUp 0.9s ease-out 0.15s forwards;
 }
 
 .hero-section p {
-    color: #555;
-    font-size: 1.15rem;
-    margin: 0;
-    letter-spacing: 0.4px;
-    font-weight: 300;
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin: 0 auto;
+    letter-spacing: 0.35px;
+    font-weight: 400;
+    max-width: 760px;
+    opacity: 0;
+    animation: fadeInUp 0.9s ease-out 0.35s forwards;
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
 }
 
 main > h1 {
@@ -55,13 +94,13 @@ main > h1 {
     margin: 0 0 12px;
     text-align: center;
     letter-spacing: -0.5px;
-    color: #000;
+    color: var(--ink);
     font-weight: 700;
 }
 
 main > p {
     text-align: center;
-    color: #666;
+    color: var(--muted);
     font-size: 1.1rem;
     margin: 0 0 60px;
     letter-spacing: 0.3px;
@@ -70,8 +109,12 @@ main > p {
 /* ---- HEADER DE SECCIONES ---- */
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 55px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
 .socios-section {
@@ -79,26 +122,28 @@ main > p {
 }
 
 .section-header h2 {
-    font-size: 2.4rem;
-    margin: 0 0 20px;
+    font-size: 2.35rem;
+    margin: 0;
     letter-spacing: -0.6px;
-    color: #000;
+    color: var(--ink);
     font-weight: 700;
+    text-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
 }
 
 .header-divider {
     height: 3px;
-    width: 80px;
-    background: linear-gradient(90deg, #ff006e, #fb5607, #ffbe0b);
+    width: 90px;
+    background: linear-gradient(90deg, var(--cyan), var(--nav-blue), var(--nav-yellow));
     margin: 0 auto 0;
     border-radius: 3px;
+    box-shadow: 0 8px 20px rgba(0, 0, 255, 0.25);
 }
 
 /* ---- CONTENEDOR DE TARJETAS ---- */
 .socios-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
     max-width: 1200px;
     margin: 0 auto;
     perspective: 1000px;
@@ -108,22 +153,46 @@ main > p {
 .socios-card {
     position: relative;
     width: 100%;
-    height: 380px;
-    background: #000;
-    border-radius: 16px;
+    height: 400px;
+    background: linear-gradient(160deg, var(--card) 0%, var(--card-2) 100%);
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), 
-                box-shadow 0.4s ease, 
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.4s ease,
                 filter 0.3s ease;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--ring);
+    isolation: isolate;
+    animation: cardRise 0.8s ease-out both;
+}
+
+.socios-card:nth-child(1) { animation-delay: 0.05s; }
+.socios-card:nth-child(2) { animation-delay: 0.12s; }
+.socios-card:nth-child(3) { animation-delay: 0.19s; }
+.socios-card:nth-child(4) { animation-delay: 0.26s; }
+.socios-card:nth-child(5) { animation-delay: 0.33s; }
+.socios-card:nth-child(6) { animation-delay: 0.4s; }
+
+.socios-card::before {
+    content: "";
+    position: absolute;
+    inset: -40% -10% auto;
+    height: 70%;
+    background: radial-gradient(60% 60% at 30% 40%, rgba(255, 255, 255, 0.22), transparent 65%);
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
 }
 
 .socios-card:hover {
-    transform: translateY(-12px) scale(1.02);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
-    filter: brightness(1.05);
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
+    filter: brightness(1.08);
+}
+
+.socios-card:hover::before {
+    opacity: 0.9;
 }
 
 /* Badges de categoría */
@@ -131,8 +200,8 @@ main > p {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    color: #000;
+    background: linear-gradient(135deg, var(--nav-blue), #3a86ff);
+    color: #141414;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
@@ -141,6 +210,7 @@ main > p {
     z-index: 10;
     letter-spacing: 0.5px;
     animation: slideInRight 0.6s ease-out 0.2s both;
+    box-shadow: 0 6px 16px rgba(0, 0, 255, 0.35);
 }
 
 .socios-card .face {
@@ -161,24 +231,32 @@ main > p {
 
 /* ---- FACE1 - CONTENIDO (visible por defecto) ---- */
 .socios-card .face.face1 {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    background: linear-gradient(135deg, #0f141b 0%, #1b2230 100%);
     z-index: 2;
     opacity: 1;
     text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .socios-card:hover .face.face1 {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0.05;
+    transform: translateY(16px);
     z-index: 1;
 }
 
 .card-logo {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    display: inline-block;
+    font-size: 3.2rem;
+    margin-bottom: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.02));
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
     animation: logoSpring 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.25));
     transition: transform 0.3s ease;
 }
 
@@ -189,35 +267,36 @@ main > p {
 .company-name {
     margin: 12px 0 6px;
     padding: 0;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 700;
     letter-spacing: -0.4px;
-    color: #fff;
+    color: #f8fafc;
     animation: textSlide 0.6s ease-out 0.1s both;
 }
 
 .company-type {
     margin: 0 0 8px;
     padding: 0;
-    font-size: 0.9rem;
-    color: #FFD700;
-    font-weight: 500;
+    font-size: 0.82rem;
+    color: #ffd166;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.6px;
+    letter-spacing: 0.9px;
     animation: textSlide 0.6s ease-out 0.15s both;
 }
 
 .socios-card .description {
     margin: 8px 0 16px;
     padding: 0;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: #aaa;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
     animation: textSlide 0.6s ease-out 0.2s both;
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
 }
 
 .card-footer {
@@ -231,7 +310,7 @@ main > p {
 
 .location {
     font-size: 0.85rem;
-    color: #999;
+    color: rgba(255, 255, 255, 0.6);
     letter-spacing: 0.2px;
 }
 
@@ -242,12 +321,13 @@ main > p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transform: translateY(18px);
 }
 
 .socios-card:hover .face.face2 {
     opacity: 1;
     z-index: 2;
-    transform: translateY(-20px);
+    transform: translateY(-10px);
 }
 
 .face2-content {
@@ -261,19 +341,19 @@ main > p {
 .socios-card .face.face2 h2 {
     margin: 0;
     padding: 0;
-    font-size: 8em;
+    font-size: 7.5em;
     color: rgba(255, 255, 255, 0.95);
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    text-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
     font-weight: 700;
     letter-spacing: -2px;
     line-height: 1;
 }
 
 .face2-text {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1rem;
-    font-weight: 500;
-    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
     margin: 0;
     padding: 0;
@@ -327,13 +407,35 @@ main > p {
     }
 }
 
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* ---- Categorías y estilos por tier ---- */
 .card-tier-gold .face.face2 {
     background-image: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
 }
 
 .card-tier-silver .face.face2 {
-    background-image: linear-gradient(135deg, #00D4FF 0%, #0099FF 50%, #6A00FF 100%);
+    background-image: linear-gradient(135deg, #00D4FF 0%, #1a3dff 55%, #3A86FF 100%);
+}
+
+@keyframes cardRise {
+    from {
+        opacity: 0;
+        transform: translateY(28px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
 }
 
 .card-tier-bronze .face.face2 {
@@ -346,7 +448,7 @@ main > p {
 }
 
 .socios-card:nth-child(2) .face.face2 {
-    background-image: linear-gradient(135deg, #00D4FF 0%, #6A00FF 100%);
+    background-image: linear-gradient(135deg, #00D4FF 0%, #1a3dff 100%);
 }
 
 .socios-card:nth-child(3) .face.face2 {
@@ -358,7 +460,7 @@ main > p {
 }
 
 .socios-card:nth-child(5) .face.face2 {
-    background-image: linear-gradient(135deg, #00D4FF 0%, #3A86FF 100%);
+    background-image: linear-gradient(135deg, #00D4FF 0%, #1a3dff 100%);
 }
 
 .socios-card:nth-child(6) .face.face2 {
@@ -371,7 +473,7 @@ main > p {
 
 @media (max-width: 768px) {
     main {
-        padding: 40px 20px 60px;
+        padding: 50px 18px 70px;
     }
 
     .hero-section {
@@ -379,7 +481,7 @@ main > p {
     }
 
     .hero-section h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 
     main > h1 {
@@ -393,11 +495,11 @@ main > p {
 
     .socios-container {
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 30px;
+        gap: 26px;
     }
 
     .socios-card {
-        height: 340px;
+        height: 360px;
     }
 
     .section-header {
@@ -409,8 +511,10 @@ main > p {
     }
 
     .card-logo {
-        font-size: 3.2rem;
-        margin-bottom: 15px;
+        font-size: 3rem;
+        width: 62px;
+        height: 62px;
+        margin-bottom: 14px;
     }
 
     .company-name {
@@ -426,13 +530,14 @@ main > p {
     }
 
     .socios-card .face.face2 h2 {
-        font-size: 5.5em;
+        font-size: 5.4em;
     }
 }
 
 @media (max-width: 480px) {
     main {
-        padding: 25px 16px 40px;
+        padding: 30px 14px 50px;
+        border-radius: 18px;
     }
 
     .hero-section {
@@ -440,7 +545,7 @@ main > p {
     }
 
     .hero-section h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin-bottom: 12px;
     }
 
@@ -464,7 +569,7 @@ main > p {
     }
 
     .socios-card {
-        height: 320px;
+        height: 340px;
     }
 
     .section-header {
@@ -480,7 +585,9 @@ main > p {
     }
 
     .card-logo {
-        font-size: 2.8rem;
+        font-size: 2.6rem;
+        width: 56px;
+        height: 56px;
         margin-bottom: 12px;
     }
 
@@ -507,7 +614,35 @@ main > p {
     }
 
     .socios-card .face.face2 h2 {
-        font-size: 4.5em;
+        font-size: 4.6em;
+    }
+}
+
+@media (hover: none) {
+    .socios-card {
+        height: auto;
+        animation: none;
+    }
+
+    .socios-card .face.face1 {
+        opacity: 1;
+        transform: none;
+        padding-bottom: 120px;
+    }
+
+    .socios-card .face.face2 {
+        opacity: 1;
+        transform: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 110px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .socios-card .face.face2 h2 {
+        font-size: 3.2em;
     }
 }
 
