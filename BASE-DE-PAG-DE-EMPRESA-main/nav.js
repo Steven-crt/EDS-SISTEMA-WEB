@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (hamburger && nav) {
         hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            nav.classList.toggle('open');
+            const isOpen = hamburger.classList.toggle('active');
+            nav.classList.toggle('open', isOpen);
+            document.body.classList.toggle('nav-open', isOpen);
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
 
         // Cerrar menú al hacer clic en un enlace
@@ -14,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 nav.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -22,6 +26,17 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!hamburger.contains(e.target) && !nav.contains(e.target)) {
                 hamburger.classList.remove('active');
                 nav.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                hamburger.classList.remove('active');
+                nav.classList.remove('open');
+                document.body.classList.remove('nav-open');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     }

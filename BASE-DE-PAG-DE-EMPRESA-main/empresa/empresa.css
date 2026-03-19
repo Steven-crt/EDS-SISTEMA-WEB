@@ -221,6 +221,7 @@ body {
 .about-section {
     background: var(--dark2);
     padding: 100px 5% 80px;
+    scroll-margin-top: 90px;
 }
 
 .about-inner {
@@ -529,6 +530,12 @@ body {
     text-align: center;
 }
 
+.stat-value {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
 .s-num {
     font-family: var(--font-h);
     font-size: 4.5em;
@@ -540,8 +547,8 @@ body {
     font-family: var(--font-h);
     font-size: 2.5em;
     color: rgba(255,255,255,0.7);
-    vertical-align: super;
     line-height: 1;
+    transform: translateY(10px);
 }
 
 .s-label {
@@ -682,6 +689,9 @@ body {
     .stat-divider { display: none; }
     .about-checks { grid-template-columns: 1fr; }
     .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
+    .stat-block { min-width: 140px; }
+    .stat-value { gap: 4px; }
+    .exp-badge { right: 0; bottom: -12px; }
 
     .hero-desc {
         font-size: 1em;
@@ -762,7 +772,7 @@ body {
         width: 80px;
         height: 80px;
         bottom: -15px;
-        right: -15px;
+        right: -5px;
     }
 
     .exp-num {
@@ -779,5 +789,8 @@ body {
 
     .s-label {
         font-size: 0.75em;
+    }
+    .s-plus {
+        transform: translateY(6px);
     }
 }

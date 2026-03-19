@@ -216,7 +216,7 @@ body.fade-out {
     header {
         height: 60px !important;
     }
-
+    
     /* Reducir animaciones costosas en móvil */
     .logo-empresa:hover {
         filter: drop-shadow(0 0 8px #0ff) drop-shadow(0 0 20px #0084ff) brightness(1.2);

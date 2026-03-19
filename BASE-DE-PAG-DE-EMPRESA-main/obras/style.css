@@ -108,6 +108,8 @@ button.seeMore:hover .icon {
 
 .carousel .list .item img {
     filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+    max-width: 100%;
+    height: auto;
 }
 
 .carousel .list .item .alert-image {
@@ -146,16 +148,6 @@ button.seeMore:hover .icon {
 .carousel .list .item:nth-child(2) img {
     width: 46%;
     right: -2%;
-}
-
-@media screen and (max-width: 767px) {
-    .carousel .list .item:nth-child(2) .introduce {
-        width: 58%;
-        left: 4%;
-    }
-    .carousel .list .item img {
-        width: 38%;
-    }
 }
 
 /* ===== VISTA DETALLADA — IMAGEN ===== */
@@ -681,16 +673,35 @@ button.seeMore:hover .icon {
     pointer-events: none !important;
 }
 
-/* =======================================================
-   *** FIX: CARRUSEL A PANTALLA COMPLETA ***
-   Sobreescribe width/max-width del style.css raíz que
-   generan el cuadro invisible con espacio en blanco.
-   ======================================================= */
-
-
-
 /* ===== RESPONSIVE ===== */
 @media screen and (max-width: 991px) {
+    .carousel {
+        width: 100%;
+        height: clamp(600px, 78vh, 740px);
+    }
+    .carousel .list {
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        transform: none;
+    }
+    .arrows {
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        transform: none;
+        padding: 0 5%;
+        box-sizing: border-box;
+    }
+    .carousel .list .item:nth-child(2) .introduce {
+        width: min(62%, 340px);
+        top: 12%;
+        left: 4%;
+    }
+    .carousel .list .item img {
+        width: 42%;
+        right: -1%;
+    }
     .carousel.showDetail .list .item:nth-child(2) img {
         width: 40%;
         right: 52%;
@@ -705,6 +716,61 @@ button.seeMore:hover .icon {
 }
 
 @media screen and (max-width: 767px) {
+    .carousel {
+        height: calc(100vh - 70px);
+        min-height: 540px;
+    }
+    .carousel .list {
+        height: 100%;
+    }
+    .carousel .list .item:nth-child(2) .introduce {
+        width: min(72%, 360px);
+        top: 8%;
+        left: 4%;
+        padding: 14px 16px;
+        background: linear-gradient(135deg, rgba(10, 10, 10, 0.82), rgba(10, 10, 10, 0.35));
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        text-align: center;
+        align-items: center;
+    }
+    .carousel:not(.showDetail) .list .item:nth-child(2) .introduce {
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(90%, 380px);
+    }
+    .carousel .list .item:nth-child(2) .introduce .title {
+        font-size: clamp(24px, 7vw, 44px);
+    }
+    .carousel .list .item:nth-child(2) .introduce .topic {
+        font-size: 12px;
+        text-align: center;
+    }
+    .carousel .list .item:nth-child(2) .introduce .des {
+        font-size: 12px;
+        line-height: 1.6;
+        text-align: center;
+    }
+    button.seeMore {
+        padding: 10px 22px;
+        font-size: 11px;
+        letter-spacing: 2px;
+        justify-content: center;
+    }
+    .carousel .list .item img {
+        width: 42%;
+        right: -3%;
+        top: 58%;
+    }
+    .carousel:not(.showDetail) .list .item:nth-child(2) img {
+        width: min(70%, 360px);
+        left: 50%;
+        right: auto;
+        top: 66%;
+        transform: translate(-50%, -50%);
+    }
     .carousel.showDetail .list .item:nth-child(2) img {
         width: 42%;
         right: 50%;
@@ -725,10 +791,11 @@ button.seeMore:hover .icon {
         flex-wrap: wrap;
     }
     .carousel .list .item .detail-badge {
-        order: -1;
-        width: 100%;
+        order: 0;
+        width: auto;
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
+        align-self: flex-start;
     }
     .checkout {
         flex-direction: column;
@@ -747,6 +814,117 @@ button.seeMore:hover .icon {
         padding: 4px 8px;
         font-size: 9px;
     }
+    .carousel .list .item img {
+        max-height: 58vh;
+        object-fit: contain;
+    }
+    .carousel .list .item:nth-child(2) .introduce .des {
+        height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    .carousel {
+        margin-top: 0;
+    }
+    .carousel.showDetail {
+        height: auto;
+        min-height: calc(100vh - 70px);
+    }
+    .carousel.showDetail .list {
+        position: relative;
+        height: auto;
+    }
+    .carousel.showDetail .list .item {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+    .carousel.showDetail .list .item:not(.active) {
+        display: none;
+    }
+    .carousel.showDetail .list .item.active {
+        padding: 10px 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .carousel.showDetail .list .item.active img {
+        position: relative !important;
+        width: min(84%, 360px);
+        left: 50% !important;
+        right: auto !important;
+        top: auto !important;
+        transform: translateX(-50%) !important;
+        margin: 16px auto 12px;
+        max-height: 54vh;
+        display: block;
+        animation: none !important;
+    }
+    .carousel.showDetail .list .item.active .detail-header {
+        justify-content: center;
+        text-align: center;
+    }
+    .carousel.showDetail .list .item.active .detail-title-group {
+        text-align: center;
+    }
+    .carousel.showDetail .list .item.active .detail-badge {
+        align-self: center;
+        margin: 0 auto 6px;
+    }
+    .carousel.showDetail .list .item.active .detail {
+        position: relative !important;
+        width: min(94%, 560px) !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        padding: 16px 14px 18px !important;
+        overflow: visible;
+        text-align: left;
+        background: rgba(10, 10, 10, 0.85);
+        border: 1px solid rgba(240, 180, 41, 0.22);
+        border-radius: 16px;
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .carousel.showDetail .list .item.active .detail .title {
+        font-size: clamp(18px, 4.8vw, 24px);
+    }
+    .carousel.showDetail .list .item.active .detail-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+    .carousel.showDetail .list .item.active .detail-client {
+        justify-content: center;
+    }
+    .carousel.showDetail .list .item.active .detail .des {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    .carousel.showDetail .list .item.active .detail .highlights {
+        justify-content: flex-start;
+    }
+    .carousel.showDetail .list .item.active .detail .specifications {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .carousel.showDetail .arrows {
+        position: relative !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        justify-content: center !important;
+        padding: 0 5% 20px !important;
+        margin-top: 16px;
+    }
+    .carousel.showDetail #back {
+        position: relative !important;
+        left: 0 !important;
+        transform: none !important;
+    }
     /* Flechas de navegación más accesibles en móvil */
     #prev, #next {
         width: 40px !important;
@@ -764,14 +942,42 @@ button.seeMore:hover .icon {
 
 @media screen and (max-width: 480px) {
     .carousel {
-        height: 500px;
+        height: calc(100vh - 60px);
+        min-height: 520px;
     }
     .carousel .list .item:nth-child(2) .introduce {
-        width: 65%;
-        left: 4%;
+        width: min(78%, 320px);
+        left: 3.5%;
+        top: 8%;
+        padding: 12px 14px;
+        text-align: center;
+        align-items: center;
+    }
+    .carousel:not(.showDetail) .list .item:nth-child(2) .introduce {
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(92%, 340px);
+    }
+    .carousel .list .item:nth-child(2) .introduce .title {
+        font-size: clamp(22px, 8vw, 38px);
+        line-height: 1.1;
+    }
+    .carousel .list .item:nth-child(2) .introduce .des {
+        font-size: 11px;
+        text-align: center;
     }
     .carousel .list .item img {
-        width: 35%;
+        width: 42%;
+        right: -4%;
+        top: 60%;
+        max-height: 52vh;
+    }
+    .carousel:not(.showDetail) .list .item:nth-child(2) img {
+        width: min(76%, 320px);
+        left: 50%;
+        right: auto;
+        top: 68%;
+        transform: translate(-50%, -50%);
     }
     .carousel.showDetail .list .item:nth-child(2) img {
         width: 35%;
@@ -799,5 +1005,90 @@ button.seeMore:hover .icon {
         width: 36px !important;
         height: 36px !important;
         font-size: 16px !important;
+    }
+    .carousel.showDetail {
+        min-height: calc(100vh - 60px);
+    }
+    .carousel.showDetail .list .item.active img {
+        position: relative !important;
+        width: min(90%, 320px);
+        left: 50% !important;
+        right: auto !important;
+        top: auto !important;
+        transform: translateX(-50%) !important;
+        margin: 16px auto 10px;
+        max-height: 50vh;
+        display: block;
+        animation: none !important;
+    }
+    .carousel.showDetail .list .item.active .detail {
+        position: relative !important;
+        width: min(95%, 520px) !important;
+        right: auto !important;
+        top: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        padding: 14px 12px 16px !important;
+        overflow: visible;
+        text-align: left;
+        border-radius: 14px;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    .carousel.showDetail .list .item.active .detail .title {
+        font-size: clamp(17px, 5.2vw, 22px);
+    }
+    .carousel .list .item .detail-badge {
+        align-self: center;
+    }
+    .carousel.showDetail .list .item.active .detail-header {
+        justify-content: center;
+        text-align: center;
+    }
+    .carousel.showDetail .list .item.active .detail-title-group {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .carousel .list .item:nth-child(2) .introduce {
+        width: min(86%, 300px);
+        padding: 10px 12px;
+    }
+    .carousel .list .item:nth-child(2) .introduce .title {
+        font-size: clamp(20px, 8.5vw, 34px);
+    }
+    .carousel .list .item img {
+        width: 46%;
+        right: -6%;
+    }
+    .carousel.showDetail .list .item.active img {
+        width: min(92%, 300px);
+    }
+}
+
+@media screen and (max-height: 520px) and (max-width: 900px) {
+    .carousel {
+        height: auto;
+        min-height: calc(100vh - 60px);
+    }
+    .carousel.showDetail .list .item.active {
+        padding: 8px 0 20px;
+    }
+    .carousel.showDetail .list .item.active img {
+        width: min(72%, 300px);
+        margin: 10px auto 8px;
+        max-height: 42vh;
+    }
+    .carousel.showDetail .list .item.active .detail {
+        width: min(92%, 520px) !important;
+        padding: 12px 12px 14px !important;
+    }
+    .carousel.showDetail .list .item.active .detail .title {
+        font-size: clamp(16px, 4.2vw, 20px);
+    }
+    .carousel.showDetail .arrows {
+        margin-top: 10px;
+        padding-bottom: 10px !important;
     }
 }
