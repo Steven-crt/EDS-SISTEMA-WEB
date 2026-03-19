@@ -12,39 +12,36 @@ const obraColors = [
     'linear-gradient(70deg, #8b0000, #4b0082)',
 ];
 
+let currentColorIndex = 0;
+
 function updateBackground() {
     const items = document.querySelectorAll('.carousel .list .item');
-    let visibleItem = null;
-    for (let i = 0; i < items.length; i++) {
-        if (items[i].style.zIndex === '10' || window.getComputedStyle(items[i]).zIndex === '10') {
-            visibleItem = items[i];
-            break;
-        }
-    }
-    if (!visibleItem) {
-        visibleItem = items[1];
-    }
+    let visibleItem = items[1] || null;
+    if (!visibleItem) return;
     const colorIndex = visibleItem.getAttribute('data-color');
-    if (colorIndex !== null) {
+    if (colorIndex !== null && colorIndex !== currentColorIndex) {
+        currentColorIndex = colorIndex;
         document.documentElement.style.setProperty('--carousel-gradient', obraColors[colorIndex]);
     }
 }
 
+let isAnimating = false;
+
 nextButton.onclick = function(){
+    if (isAnimating) return;
     showSlider('next');
 }
 prevButton.onclick = function(){
+    if (isAnimating) return;
     showSlider('prev');
 }
-let unAcceppClick;
+
 const showSlider = (type) => {
     if (carousel.classList.contains('showDetail')) {
         return;
     }
     
-    nextButton.style.pointerEvents = 'none';
-    prevButton.style.pointerEvents = 'none';
-
+    isAnimating = true;
     updateBackground();
     
     carousel.classList.remove('next', 'prev');
@@ -57,11 +54,9 @@ const showSlider = (type) => {
         carousel.classList.add('prev');
     }
     
-    clearTimeout(unAcceppClick);
-    unAcceppClick = setTimeout(()=>{
-        nextButton.style.pointerEvents = 'auto';
-        prevButton.style.pointerEvents = 'auto';
-    }, 1500)
+    setTimeout(()=>{
+        isAnimating = false;
+    }, 500)
 }
 seeMoreButtons.forEach((button) => {
     button.onclick = function(){

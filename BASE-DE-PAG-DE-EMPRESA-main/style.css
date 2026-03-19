@@ -306,7 +306,7 @@ background: #0ff;
 /* Original Airpods animation styles (some might be needed) */
 :root{
     --item1-transform: translateX(-100%) translateY(-5%) scale(1.5);
-    --item1-filter: blur(30px);
+    --item1-filter: blur(8px);
     --item1-zIndex: 11;
     --item1-opacity: 0;
 
@@ -316,17 +316,17 @@ background: #0ff;
     --item2-opacity: 1;
 
     --item3-transform: translate(50%,10%) scale(0.8);
-    --item3-filter: blur(10px);
+    --item3-filter: blur(4px);
     --item3-zIndex: 9;
     --item3-opacity: 1;
 
     --item4-transform: translate(90%,20%) scale(0.5);
-    --item4-filter: blur(30px);
+    --item4-filter: blur(8px);
     --item4-zIndex: 8;
     --item4-opacity: 1;
 
     --item5-transform: translate(120%,30%) scale(0.3);
-    --item5-filter: blur(40px);
+    --item5-filter: blur(12px);
     --item5-zIndex: 7;
     --item5-opacity: 0;
 }
@@ -335,6 +335,7 @@ background: #0ff;
     height: 800px;
     overflow: hidden;
     margin-top: -50px;
+    contain: layout style paint;
 }
 .carousel .list{
     position: absolute;
@@ -343,6 +344,7 @@ background: #0ff;
     height: 80%;
     left: 50%;
     transform: translateX(-50%);
+    contain: layout style;
 }
 .carousel .list .item{
     position: absolute;
@@ -350,9 +352,10 @@ background: #0ff;
     width: 70%;
     height: 100%;
     font-size: 15px;
-    transition: left 0.5s ease-in-out, opacity 0.5s ease-in-out, width 0.5s ease-in-out;
+    transition: left 0.35s ease-in-out, opacity 0.35s ease-in-out, width 0.35s ease-in-out;
     color: #eee;
-    will-change: transform, opacity, filter;
+    will-change: transform, opacity, left;
+    contain: layout style;
 }
 .carousel .list .item:nth-child(n + 6){
     opacity: 0;
@@ -367,7 +370,8 @@ background: #0ff;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    transition: right 0.8s ease-in-out, opacity 0.5s ease-in-out;
+    transition: right 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    will-change: transform, right;
 }
 
 .carousel .list .item .introduce{
@@ -449,13 +453,11 @@ background: #0ff;
 }
 @keyframes showContent{
     from{
-        transform: translateY(-30px) scale(0.95);
-        filter: blur(10px);
+        transform: translateY(-20px) scale(0.97);
         opacity: 0;
     }to{
         transform: translateY(0) scale(1);
         opacity: 1;
-        filter: blur(0px);
     }
 }
 .carousel .list .item:nth-child(2) .introduce .topic{
@@ -469,62 +471,57 @@ background: #0ff;
 }
 /* next click */
 .carousel.next .item:nth-child(1){
-    animation: transformFromPosition2 0.4s ease-in-out 1 forwards;
+    animation: transformFromPosition2 0.35s ease-in-out 1 forwards;
 }
 @keyframes transformFromPosition2{
     from{
         transform: var(--item2-transform);
-        filter: var(--item2-filter);
         opacity: var(--item2-opacity);
     }
 }
 .carousel.next .item:nth-child(2){
-    animation: transformFromPosition3 0.5s ease-in-out 1 forwards;
+    animation: transformFromPosition3 0.4s ease-in-out 1 forwards;
 }
 @keyframes transformFromPosition3{
     from{
         transform: var(--item3-transform);
-        filter: var(--item3-filter);
         opacity: var(--item3-opacity);
     }
 }
 .carousel.next .item:nth-child(3){
-    animation: transformFromPosition4 0.6s ease-in-out 1 forwards;
+    animation: transformFromPosition4 0.45s ease-in-out 1 forwards;
 }
 @keyframes transformFromPosition4{
     from{
         transform: var(--item4-transform);
-        filter: var(--item4-filter);
         opacity: var(--item4-opacity);
     }
 }
 .carousel.next .item:nth-child(4){
-    animation: transformFromPosition5 0.7s ease-in-out 1 forwards;
+    animation: transformFromPosition5 0.5s ease-in-out 1 forwards;
 }
 @keyframes transformFromPosition5{
     from{
         transform: var(--item5-transform);
-        filter: var(--item5-filter);
         opacity: var(--item5-opacity);
     }
 }
 /* previous */
 .carousel.prev .list .item:nth-child(5){
-    animation: transformFromPosition4 0.4s ease-in-out 1 forwards;
+    animation: transformFromPosition4 0.35s ease-in-out 1 forwards;
 }
 .carousel.prev .list .item:nth-child(4){
-    animation: transformFromPosition3 0.5s ease-in-out 1 forwards;
+    animation: transformFromPosition3 0.4s ease-in-out 1 forwards;
 }
 .carousel.prev .list .item:nth-child(3){
-    animation: transformFromPosition2 0.6s ease-in-out 1 forwards;
+    animation: transformFromPosition2 0.45s ease-in-out 1 forwards;
 }
 .carousel.prev .list .item:nth-child(2){
-    animation: transformFromPosition1 0.7s ease-in-out 1 forwards;
+    animation: transformFromPosition1 0.5s ease-in-out 1 forwards;
 }
 @keyframes transformFromPosition1{
     from{
         transform: var(--item1-transform);
-        filter: var(--item1-filter);
         opacity: var(--item1-opacity);
     }
 }
@@ -540,6 +537,7 @@ background: #0ff;
     left: 100%;
     opacity: 0;
     pointer-events: none;
+    transition: left 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 .carousel.showDetail .list .item:nth-child(2){
     width: 100%;
@@ -555,13 +553,11 @@ background: #0ff;
 
 @keyframes scaleImage{
     from{
-        transform: translateY(-50%) scale(0.9);
-        opacity: 0.8;
-        filter: brightness(0.9);
+        transform: translateY(-50%) scale(0.95);
+        opacity: 0.9;
     }to{
         transform: translateY(-50%) scale(1);
         opacity: 1;
-        filter: brightness(1);
     }
 }
 .carousel.showDetail .list .item:nth-child(2) .detail{

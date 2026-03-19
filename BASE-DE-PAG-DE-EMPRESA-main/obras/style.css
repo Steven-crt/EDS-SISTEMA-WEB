@@ -107,7 +107,7 @@ button.seeMore:hover .icon {
 }
 
 .carousel .list .item img {
-    filter: drop-shadow(0 20px 50px rgba(0,0,0,0.65));
+    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
 }
 
 .carousel .list .item .alert-image {
@@ -163,8 +163,8 @@ button.seeMore:hover .icon {
     width: 38%;
     right: 55%;
     border-radius: 16px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
-    animation: scaleImage 0.6s ease-out forwards;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    animation: scaleImage 0.4s ease-out forwards;
 }
 
 @keyframes scaleImage {
@@ -565,18 +565,18 @@ button.seeMore:hover .icon {
 .carousel.showDetail .list .item:nth-child(2) .detail .obra-socios,
 .carousel.showDetail .list .item:nth-child(2) .detail .checkout {
     opacity: 0;
-    animation: showDetailContent 0.4s ease-out forwards;
+    animation: showDetailContent 0.3s ease-out forwards;
 }
 
-.carousel.showDetail .list .item:nth-child(2) .detail .des              { animation-delay: 0.1s; }
-.carousel.showDetail .list .item:nth-child(2) .detail .highlights        { animation-delay: 0.15s; }
-.carousel.showDetail .list .item:nth-child(2) .detail .specifications    { animation-delay: 0.2s; }
-.carousel.showDetail .list .item:nth-child(2) .detail .progress-section  { animation-delay: 0.3s; }
-.carousel.showDetail .list .item:nth-child(2) .detail .obra-socios        { animation-delay: 0.35s; }
-.carousel.showDetail .list .item:nth-child(2) .detail .checkout           { animation-delay: 0.4s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .des              { animation-delay: 0.05s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .highlights        { animation-delay: 0.08s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .specifications    { animation-delay: 0.1s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .progress-section  { animation-delay: 0.15s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .obra-socios        { animation-delay: 0.18s; }
+.carousel.showDetail .list .item:nth-child(2) .detail .checkout           { animation-delay: 0.2s; }
 
 @keyframes showDetailContent {
-    from { opacity: 0; transform: translateY(10px); }
+    from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
