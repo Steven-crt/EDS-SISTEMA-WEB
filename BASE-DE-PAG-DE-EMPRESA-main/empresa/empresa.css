@@ -682,4 +682,102 @@ body {
     .stat-divider { display: none; }
     .about-checks { grid-template-columns: 1fr; }
     .hero-title { font-size: clamp(3.5rem, 18vw, 6rem); }
+
+    .hero-desc {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cta-btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    .stats-tape {
+        padding: 40px 5%;
+    }
+
+    .s-num {
+        font-size: 3em;
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mvv-section, .cta-section {
+        padding: 60px 5%;
+    }
+
+    .about-section {
+        padding: 60px 5%;
+    }
+
+    .services-section {
+        padding: 60px 5%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: clamp(2.8rem, 20vw, 4.5rem); }
+
+    .hero-badge {
+        font-size: 0.65em;
+        letter-spacing: 2px;
+        gap: 8px;
+    }
+
+    .badge-line {
+        width: 20px;
+    }
+
+    .hero-desc {
+        font-size: 0.9em;
+    }
+
+    .cta-btn {
+        padding: 12px 24px;
+        font-size: 0.85em;
+    }
+
+    .about-frame {
+        width: 220px;
+        height: 220px;
+    }
+
+    .about-logo {
+        width: 150px;
+    }
+
+    .exp-badge {
+        width: 80px;
+        height: 80px;
+        bottom: -15px;
+        right: -15px;
+    }
+
+    .exp-num {
+        font-size: 1.5em;
+    }
+
+    .section-header {
+        padding-left: 14px;
+    }
+
+    .s-num {
+        font-size: 2.5em;
+    }
+
+    .s-label {
+        font-size: 0.75em;
+    }
 }

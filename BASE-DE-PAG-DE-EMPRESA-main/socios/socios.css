@@ -693,6 +693,17 @@ main {
     .trust-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Reducir blobs animados en móvil */
+    .hero-blob {
+        filter: blur(40px);
+        opacity: 0.25;
+    }
+
+    .blob-1, .blob-2, .blob-3 {
+        width: 200px;
+        height: 200px;
+    }
 }
 
 /* Animación de entrada para trust items */

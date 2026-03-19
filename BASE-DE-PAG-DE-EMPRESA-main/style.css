@@ -28,6 +28,56 @@ header {
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    header {
+        height: 70px !important;
+        padding: 0 4% !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    header .logo {
+        font-size: 0.85em !important;
+    }
+
+    header .logo img {
+        height: 36px !important;
+    }
+
+    header .logo span {
+        display: none;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn {
+        font-size: 14px !important;
+        padding: 8px 16px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        height: 60px !important;
+        padding: 0 3% !important;
+    }
+
+    header .logo {
+        font-size: 0.75em !important;
+    }
+
+    header .logo img {
+        height: 34px !important;
+    }
+
+    header .logo span {
+        display: none;
+    }
+}
+
 header .logo {
     font-weight: 700;
     font-size: 1.1em;
@@ -62,6 +112,7 @@ nav {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
+  will-change: transform, box-shadow;
 }
 
 .btn:hover {
@@ -301,6 +352,7 @@ background: #0ff;
     font-size: 15px;
     transition: left 0.5s ease-in-out, opacity 0.5s ease-in-out, width 0.5s ease-in-out;
     color: #eee;
+    will-change: transform, opacity, filter;
 }
 .carousel .list .item:nth-child(n + 6){
     opacity: 0;
@@ -664,14 +716,16 @@ background: #0ff;
         height: 100%;
     }
     .carousel .list .item:nth-child(2) .introduce{
-        width: 50%;
+        width: 55%;
+        left: 4%;
     }
 
     .carousel .list .item img{
-        width: 40%;
+        width: 38%;
     }
     .carousel.showDetail .list .item:nth-child(2) .detail{
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
         font-size: small;
     }
     .carousel .list .item:nth-child(2) .introduce .des,
@@ -683,5 +737,46 @@ background: #0ff;
         display: flex;
         width: max-content;
         float: right;
+    }
+    /* Reducir blur de fondo en móvil */
+    .carousel::before{
+        filter: blur(100px);
+    }
+    .carousel.showDetail::before{
+        filter: blur(80px);
+    }
+}
+
+@media screen and (max-width: 480px){
+    .carousel{
+        height: 500px;
+    }
+    .carousel .list .item{
+        font-size: 9px;
+    }
+    .carousel .list .item:nth-child(2) .introduce{
+        width: 60%;
+        left: 3%;
+    }
+    .carousel .list .item img{
+        width: 32%;
+    }
+    .carousel .list .item .introduce .title{
+        font-size: 1.5em;
+    }
+    .carousel .list .item .introduce .topic{
+        font-size: 3em;
+    }
+    .arrows{
+        bottom: 60px;
+    }
+    #prev, #next{
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    #back{
+        font-size: 11px;
+        padding: 8px 16px;
     }
 }

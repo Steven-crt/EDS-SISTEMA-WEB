@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body style="padding-top: 80px;">
+<body style="padding-top: 70px;">
 
 <header>
     <div class="logo">
@@ -20,6 +20,9 @@
             <span>EDI EDIFICACIONES INTELIGENTES</span>
         </a>
     </div>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
     <nav>
         <a href="../empresa/index.html" class="btn btn__empresa">Empresa</a>
         <a href="../socios/index.html" class="btn btn__socios">Socios</a>
@@ -384,6 +387,7 @@
     </section>
 </main>
 
+<script src="../nav.js"></script>
 <script>
 // Animación de entrada con Intersection Observer
 document.addEventListener('DOMContentLoaded', function() {

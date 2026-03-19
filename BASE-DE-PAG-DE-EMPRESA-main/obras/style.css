@@ -80,14 +80,15 @@ button.seeMore {
     letter-spacing: 3px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, letter-spacing 0.3s;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: inline-flex;
     align-items: center;
     gap: 10px;
     box-shadow: 0 4px 20px rgba(240, 180, 41, 0.15),
                 inset 0 1px 0 rgba(255,255,255,0.1);
+    will-change: transform, box-shadow;
 }
 button.seeMore .icon {
     font-size: 1.1em;
@@ -138,7 +139,7 @@ button.seeMore:hover .icon {
 }
 
 .carousel .list .item:nth-child(2) .introduce {
-    width: 340px;
+    width: clamp(200px, 40%, 340px);
     left: 4%;
 }
 
@@ -149,8 +150,8 @@ button.seeMore:hover .icon {
 
 @media screen and (max-width: 767px) {
     .carousel .list .item:nth-child(2) .introduce {
-        width: 60%;
-        left: 6%;
+        width: 58%;
+        left: 4%;
     }
     .carousel .list .item img {
         width: 38%;
@@ -518,11 +519,12 @@ button.seeMore:hover .icon {
     letter-spacing: 1.5px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: background 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, border-color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
+    will-change: transform;
 }
 
 .checkout button:hover {
@@ -615,19 +617,19 @@ button.seeMore:hover .icon {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
+    transition: background 0.3s, border-color 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, color 0.3s !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
     box-shadow: 0 4px 20px rgba(240, 180, 41, 0.15),
                 inset 0 1px 0 rgba(255,255,255,0.1) !important;
+    will-change: transform !important;
 }
 
 #prev:hover, #next:hover {
     background: rgba(240, 180, 41, 0.25) !important;
     border-color: #f0b429 !important;
     transform: scale(1.15) !important;
-    box-shadow: 0 6px 28px rgba(240, 180, 41, 0.45),
-                0 0 0 4px rgba(240, 180, 41, 0.12) !important;
+    box-shadow: 0 6px 28px rgba(240, 180, 41, 0.45) !important;
     color: #fff !important;
 }
 
@@ -643,8 +645,8 @@ button.seeMore:hover .icon {
     border: 1.5px solid rgba(240, 180, 41, 0.5) !important;
     border-radius: 30px !important;
     background: rgba(240, 180, 41, 0.08) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
     color: #f0b429 !important;
     font-family: 'Barlow Condensed', sans-serif !important;
     font-size: 13px !important;
@@ -653,10 +655,11 @@ button.seeMore:hover .icon {
     text-transform: uppercase !important;
     padding: 10px 28px !important;
     cursor: pointer !important;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    transition: background 0.3s, border-color 0.3s, color 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s, letter-spacing 0.3s !important;
     box-shadow: 0 4px 20px rgba(240, 180, 41, 0.15),
                 inset 0 1px 0 rgba(255,255,255,0.1) !important;
     white-space: nowrap !important;
+    will-change: transform !important;
 }
 
 #back:hover {
@@ -743,5 +746,58 @@ button.seeMore:hover .icon {
     .carousel .list .item .detail .highlights span {
         padding: 4px 8px;
         font-size: 9px;
+    }
+    /* Flechas de navegación más accesibles en móvil */
+    #prev, #next {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 16px !important;
+    }
+    .arrows {
+        bottom: 80px !important;
+    }
+    #back {
+        font-size: 11px !important;
+        padding: 8px 20px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel {
+        height: 500px;
+    }
+    .carousel .list .item:nth-child(2) .introduce {
+        width: 65%;
+        left: 4%;
+    }
+    .carousel .list .item img {
+        width: 35%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) img {
+        width: 35%;
+        right: 55%;
+    }
+    .carousel.showDetail .list .item:nth-child(2) .detail {
+        width: 58%;
+        padding-top: 80px !important;
+        font-size: x-small;
+    }
+    .carousel .list .item .detail .specifications {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 4px !important;
+    }
+    .carousel .list .item .detail .specifications > div {
+        padding: 8px 4px !important;
+    }
+    .carousel .list .item .detail .specifications .spec-icon {
+        font-size: 16px;
+    }
+    .detail-header {
+        gap: 8px !important;
+    }
+    .detail-icon {
+        width: 36px !important;
+        height: 36px !important;
+        font-size: 16px !important;
     }
 }

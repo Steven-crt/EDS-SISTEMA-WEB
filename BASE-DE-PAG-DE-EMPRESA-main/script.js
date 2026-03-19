@@ -95,14 +95,3 @@ document.addEventListener('visibilitychange', function() {
         updateBackground();
     }
 });
-
-let lastUpdate = Date.now();
-const checkForUpdate = () => {
-    const now = Date.now();
-    if (now - lastUpdate > 100) {
-        updateBackground();
-        lastUpdate = now;
-    }
-    requestAnimationFrame(checkForUpdate);
-};
-requestAnimationFrame(checkForUpdate);

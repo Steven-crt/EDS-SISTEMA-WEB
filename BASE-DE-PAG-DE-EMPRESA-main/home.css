@@ -10,7 +10,8 @@ body {
     background-position: center;
 
     /* Animación de fondo cambiante (hue-rotate) */
-animation: animateBg 20s ease-in-out infinite;
+    animation: animateBg 20s ease-in-out infinite;
+    will-change: filter;
 }
 
 /* Correcciones para el encabezado */
@@ -150,5 +151,74 @@ body.fade-out {
     100% {
         opacity: 0;
         visibility: hidden;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (max-width: 768px) {
+    .company-info {
+        padding: 60px 24px;
+    }
+
+    .company-info h1 {
+        font-size: 2.2em;
+    }
+
+    .company-info p {
+        font-size: 1em;
+    }
+
+    .logo-empresa {
+        height: 220px;
+        filter: drop-shadow(0 0 5px #0ff) drop-shadow(0 0 15px #0084ff);
+    }
+
+    header .logo span {
+        display: none !important;
+    }
+
+    header .logo img {
+        height: 42px !important;
+    }
+
+    header {
+        height: 70px !important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .company-info {
+        padding: 40px 16px;
+    }
+
+    .company-info h1 {
+        font-size: 1.7em;
+    }
+
+    .company-info p {
+        font-size: 0.9em;
+        line-height: 1.5;
+    }
+
+    .logo-empresa {
+        height: 160px;
+        filter: drop-shadow(0 0 4px #0ff) drop-shadow(0 0 10px #0084ff);
+    }
+
+    header .logo span {
+        display: none !important;
+    }
+
+    header .logo img {
+        height: 36px !important;
+    }
+
+    header {
+        height: 60px !important;
+    }
+
+    /* Reducir animaciones costosas en móvil */
+    .logo-empresa:hover {
+        filter: drop-shadow(0 0 8px #0ff) drop-shadow(0 0 20px #0084ff) brightness(1.2);
     }
 }
