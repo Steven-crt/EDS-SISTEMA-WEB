@@ -7,8 +7,12 @@
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../nav.css">
     <link rel="stylesheet" href="socios.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body style="padding-top: 80px;">
+
 <header>
     <div class="logo">
         <a href="../index.html" style="color: inherit; text-decoration: none; display:flex; align-items:center; gap:12px;">
@@ -23,144 +27,383 @@
         <a href="../contactos/index.html" class="btn btn__contacto">Contacto</a>
     </nav>
 </header>
+
 <main>
-    <div class="hero-section">
-        <h1>Nuestros Socios Estratégicos</h1>
-        <p>Contamos con aliados de confianza en el sector de edificaciones y tecnología que comparten nuestros valores</p>
-    </div>
-
-    <section class="socios-section">
-        <div class="section-header">
-            <h2>Aliados Clave</h2>
-            <div class="header-divider"></div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob blob-1"></div>
+            <div class="hero-blob blob-2"></div>
+            <div class="hero-blob blob-3"></div>
         </div>
-
-        <div class="socios-container">
-
-            <!-- TARJETA 1 -->
-            <div class="socios-card card-tier-gold">
-                <div class="card-badge">Premium</div>
-                <div class="face face1">
-                    <div class="card-logo">🏗️</div>
-                    <h3 class="company-name">Constructora Mayor</h3>
-                    <p class="company-type">Constructora Principal</p>
-                    <p class="description">Ejecuta proyectos corporativos y residenciales de gran escala con foco en seguridad y precisión.</p>
-                    <div class="card-footer">
-                        <span class="location">📍 Lima</span>
-                    </div>
+        <div class="hero-content">
+            <span class="hero-badge">NUESTROS ALIADOS</span>
+            <h1>Socios Estratégicos</h1>
+            <p>Trabajamos con las empresas líderes del sector para garantizar soluciones de primera calidad en cada proyecto.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-number">6</span>
+                    <span class="hero-stat-text">Socios Clave</span>
                 </div>
-                <div class="face face2">
-                    <div class="face2-content">
-                        <h2>01</h2>
-                        <p class="face2-text">Construcción de infraestructuras</p>
-                    </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">50+</span>
+                    <span class="hero-stat-text">Proyectos</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-number">100%</span>
+                    <span class="hero-stat-text">Confianza</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- TARJETA 2: DAHUA TECHNOLOGY -->
-            <div class="socios-card card-tier-silver">
-                <div class="card-badge">Premium</div>
-                <div class="face face1">
-                    <div class="card-logo">
-                        <img src="../images/Dahua_Technology_logo-Photoroom.png"
-                             alt="Dahua Technology"
-                             style="width:100%; height:100%; object-fit:contain; border-radius:8px;">
+    <!-- PARTNERS SECTION -->
+    <section class="partners-section">
+        <div class="partners-container">
+            
+            <!-- Partner Card 1 - Schneider Electric -->
+            <article class="partner-card" data-category="energia">
+                <div class="card-accent accent-green"></div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="partner-badge">Energía</div>
+                        <div class="partner-logo-wrapper">
+                            <div class="logo-glow glow-green"></div>
+                            <img src="../images/Schneider Electric.png" alt="Schneider Electric" class="partner-logo-img">
+                        </div>
+                        <h3 class="partner-name">Schneider Electric</h3>
+                        <p class="partner-tagline">Energía & Automatización</p>
+                        <div class="card-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
                     </div>
-                    <h3 class="company-name">Dahua Technology</h3>
-                    <p class="company-type">Proveedor de servicios y soluciones AIoT</p>
-                    <p class="description">Ofrece soluciones, sistemas y servicios de seguridad de extremo a extremo para crear valor para las operaciones de la ciudad, la administración corporativa y los consumidores.</p>
-                    <div class="card-footer">
-                        <span class="location">📍 Nivel Global</span>
+                    <div class="card-back">
+                        <div class="back-header">
+                            <img src="../images/Schneider Electric.png" alt="Schneider Electric" class="back-logo">
+                            <h4>Schneider Electric</h4>
+                        </div>
+                        <p class="back-description">Líder mundial en gestión de energía y automatización eléctrica. Nos provee soluciones de eficiencia energética y automatización para edificaciones inteligentes.</p>
+                        <div class="back-stats">
+                            <div class="back-stat">
+                                <span class="back-stat-icon">🌍</span>
+                                <span class="back-stat-text">Presencia Global</span>
+                            </div>
+                            <div class="back-stat">
+                                <span class="back-stat-icon">⚡</span>
+                                <span class="back-stat-text">100+ Países</span>
+                            </div>
+                        </div>
+                        <div class="back-services">
+                            <span class="service-tag">Distribución Eléctrica</span>
+                            <span class="service-tag">Automatización</span>
+                            <span class="service-tag">Eficiencia Energética</span>
+                        </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="face2-content">
-                        <h2>02</h2>
-                        <p class="face2-text">Automatización inteligente</p>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <!-- TARJETA 3 -->
-            <div class="socios-card card-tier-bronze">
-                <div class="face face1">
-                    <div class="card-logo">🔧</div>
-                    <h3 class="company-name">ProMateriales</h3>
-                    <p class="company-type">Distribuidor de Materiales</p>
-                    <p class="description">Suministro certificado y logística ágil para obras civiles y proyectos comerciales.</p>
-                    <div class="card-footer">
-                        <span class="location">📍 Medellín</span>
+            <!-- Partner Card 2 - Motorola -->
+            <article class="partner-card" data-category="telecom">
+                <div class="card-accent accent-blue"></div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="partner-badge badge-blue">Telecom</div>
+                        <div class="partner-logo-wrapper">
+                            <div class="logo-glow glow-blue"></div>
+                            <img src="../images/Motorla.png" alt="Motorola" class="partner-logo-img">
+                        </div>
+                        <h3 class="partner-name">Motorola Solutions</h3>
+                        <p class="partner-tagline">Comunicaciones Críticas</p>
+                        <div class="card-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-back back-blue">
+                        <div class="back-header">
+                            <img src="../images/Motorla.png" alt="Motorola" class="back-logo">
+                            <h4>Motorola Solutions</h4>
+                        </div>
+                        <p class="back-description">Especialista en comunicaciones críticas y soluciones de seguridad. Nos apoya con sistemas de radio TETRA e infraestructura de telecomunicaciones.</p>
+                        <div class="back-stats">
+                            <div class="back-stat">
+                                <span class="back-stat-icon">📡</span>
+                                <span class="back-stat-text">Presencia Global</span>
+                            </div>
+                            <div class="back-stat">
+                                <span class="back-stat-icon">📻</span>
+                                <span class="back-stat-text">100+ Años</span>
+                            </div>
+                        </div>
+                        <div class="back-services">
+                            <span class="service-tag tag-blue">Radios TETRA</span>
+                            <span class="service-tag tag-blue">Seguridad Pública</span>
+                            <span class="service-tag tag-blue">Comunicaciones</span>
+                        </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="face2-content">
-                        <h2>03</h2>
-                        <p class="face2-text">Materiales premium</p>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <!-- TARJETA 4 -->
-            <div class="socios-card card-tier-gold">
-                <div class="card-badge">Premium</div>
-                <div class="face face1">
-                    <div class="card-logo">📊</div>
-                    <h3 class="company-name">Proyecta Consultoría</h3>
-                    <p class="company-type">Consultoría Estratégica</p>
-                    <p class="description">Consultoría en PMO, planificación de hitos y control de riesgos con enfoque ejecutivo.</p>
-                    <div class="card-footer">
-                        <span class="location">📍 Santiago</span>
+            <!-- Partner Card 3 - Furukawa Electric -->
+            <article class="partner-card" data-category="fibra">
+                <div class="card-accent accent-orange"></div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="partner-badge badge-orange">Fibra Óptica</div>
+                        <div class="partner-logo-wrapper">
+                            <div class="logo-glow glow-orange"></div>
+                            <img src="../images/furukawa_electric_europe_limited_logo.jpeg" alt="Furukawa Electric" class="partner-logo-img">
+                        </div>
+                        <h3 class="partner-name">Furukawa Electric</h3>
+                        <p class="partner-tagline">Fibra Óptica & Telecomunicaciones</p>
+                        <div class="card-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-back back-orange">
+                        <div class="back-header">
+                            <img src="../images/furukawa_electric_europe_limited_logo.jpeg" alt="Furukawa Electric" class="back-logo">
+                            <h4>Furukawa Electric</h4>
+                        </div>
+                        <p class="back-description">Proveedor líder de cables de fibra óptica y soluciones de conectividad. Nos suministra infraestructura de red y comunicaciones de alta velocidad.</p>
+                        <div class="back-stats">
+                            <div class="back-stat">
+                                <span class="back-stat-icon">🌐</span>
+                                <span class="back-stat-text">Presencia Global</span>
+                            </div>
+                            <div class="back-stat">
+                                <span class="back-stat-icon">🔮</span>
+                                <span class="back-stat-text">140+ Años</span>
+                            </div>
+                        </div>
+                        <div class="back-services">
+                            <span class="service-tag tag-orange">Fibra Óptica</span>
+                            <span class="service-tag tag-orange">Cables</span>
+                            <span class="service-tag tag-orange">Conectividad</span>
+                        </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="face2-content">
-                        <h2>04</h2>
-                        <p class="face2-text">Planificación experta</p>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <!-- TARJETA 5 -->
-            <div class="socios-card card-tier-silver">
-                <div class="card-badge">Premium</div>
-                <div class="face face1">
-                    <div class="card-logo">⚡</div>
-                    <h3 class="company-name">EcoEnergy Systems</h3>
-                    <p class="company-type">Soluciones Energéticas</p>
-                    <p class="description">Soluciones solares, medición inteligente y eficiencia energética para edificios sostenibles.</p>
-                    <div class="card-footer">
-                        <span class="location">📍 Quito</span>
+            <!-- Partner Card 4 - Dahua Technology -->
+            <article class="partner-card" data-category="seguridad">
+                <div class="card-accent accent-red"></div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="partner-badge badge-red">Seguridad</div>
+                        <div class="partner-logo-wrapper">
+                            <div class="logo-glow glow-red"></div>
+                            <img src="../images/Dahua_Technology_logo-Photoroom.png" alt="Dahua Technology" class="partner-logo-img">
+                        </div>
+                        <h3 class="partner-name">Dahua Technology</h3>
+                        <p class="partner-tagline">Videovigilancia & IAoT</p>
+                        <div class="card-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-back back-red">
+                        <div class="back-header">
+                            <img src="../images/Dahua_Technology_logo-Photoroom.png" alt="Dahua Technology" class="back-logo">
+                            <h4>Dahua Technology</h4>
+                        </div>
+                        <p class="back-description">Proveedor global de soluciones de videovigilancia e IAoT. Nos brinda cámaras de alta resolución y sistemas de análisis con inteligencia artificial.</p>
+                        <div class="back-stats">
+                            <div class="back-stat">
+                                <span class="back-stat-icon">📹</span>
+                                <span class="back-stat-text">Presencia Global</span>
+                            </div>
+                            <div class="back-stat">
+                                <span class="back-stat-icon">🏆</span>
+                                <span class="back-stat-text">#2 Mundial</span>
+                            </div>
+                        </div>
+                        <div class="back-services">
+                            <span class="service-tag tag-red">Videovigilancia</span>
+                            <span class="service-tag tag-red">Inteligencia Artificial</span>
+                            <span class="service-tag tag-red">Monitoreo</span>
+                        </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="face2-content">
-                        <h2>05</h2>
-                        <p class="face2-text">Energías renovables</p>
-                    </div>
-                </div>
-            </div>
+            </article>
 
-            <!-- TARJETA 6 -->
-            <div class="socios-card card-tier-bronze">
-                <div class="face face1">
-                    <div class="card-logo">🏆</div>
-                    <h3 class="company-name">Diseño Integral</h3>
-                    <p class="company-type">Estudio de Arquitectura</p>
-                    <p class="description">Estudio con enfoque bioclimático y diseño funcional para espacios corporativos premium.</p>
-                    <div class="card-footer">
-                        <span class="location">📍 Ciudad de México</span>
+            <!-- Partner Card 5 - Radio Frecuencia -->
+            <article class="partner-card" data-category="radio">
+                <div class="card-accent accent-purple"></div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="partner-badge badge-purple">Radio</div>
+                        <div class="partner-logo-wrapper">
+                            <div class="logo-glow glow-purple"></div>
+                            <div class="partner-logo-placeholder">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <h3 class="partner-name">Radio Frecuencia del Perú</h3>
+                        <p class="partner-tagline">Telecomunicaciones</p>
+                        <div class="card-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-back back-purple">
+                        <div class="back-header">
+                            <div class="back-logo-placeholder">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M5 12.55a11 11 0 0 1 14.08 0M1.42 9a16 16 0 0 1 21.16 0M8.53 16.11a6 6 0 0 1 6.95 0M12 20h.01"/>
+                                </svg>
+                            </div>
+                            <h4>Radio Frecuencia del Perú</h4>
+                        </div>
+                        <p class="back-description">Empresa especializada en infraestructura de radiofrecuencia y comunicaciones. Nos apoya en instalación y mantenimiento de sistemas de radio comunicación.</p>
+                        <div class="back-stats">
+                            <div class="back-stat">
+                                <span class="back-stat-icon">🇵🇪</span>
+                                <span class="back-stat-text">Presencia Perú</span>
+                            </div>
+                            <div class="back-stat">
+                                <span class="back-stat-icon">📍</span>
+                                <span class="back-stat-text">Enfoque Local</span>
+                            </div>
+                        </div>
+                        <div class="back-services">
+                            <span class="service-tag tag-purple">Radiofrecuencia</span>
+                            <span class="service-tag tag-purple">Radio Comunicación</span>
+                        </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="face2-content">
-                        <h2>06</h2>
-                        <p class="face2-text">Diseño arquitectónico</p>
+            </article>
+
+            <!-- Partner Card 6 - EDI (Líder) -->
+            <article class="partner-card featured" data-category="lider">
+                <div class="card-accent accent-gold"></div>
+                <div class="featured-badge-wrapper">
+                    <span class="featured-badge">⭐ LÍDER DEL PROYECTO</span>
+                </div>
+                <div class="card-inner">
+                    <div class="card-front">
+                        <div class="partner-badge badge-gold">Líder</div>
+                        <div class="partner-logo-wrapper">
+                            <div class="logo-glow glow-gold"></div>
+                            <img src="../images/logo.png" alt="EDI Edificaciones Inteligentes" class="partner-logo-img">
+                        </div>
+                        <h3 class="partner-name">EDI Edificaciones</h3>
+                        <p class="partner-tagline">Inteligentes</p>
+                        <div class="card-arrow">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="card-back back-gold">
+                        <div class="back-header">
+                            <img src="../images/logo.png" alt="EDI" class="back-logo">
+                            <h4>EDI Edificaciones Inteligentes</h4>
+                        </div>
+                        <p class="back-description">Empresa líder en ejecución de proyectos de infraestructura, edificaciones inteligentes y sistemas tecnológicos integrados para el sector público y privado.</p>
+                        <div class="back-stats">
+                            <div class="back-stat">
+                                <span class="back-stat-icon">📅</span>
+                                <span class="back-stat-text">Fundada 2015</span>
+                            </div>
+                            <div class="back-stat">
+                                <span class="back-stat-icon">🏗️</span>
+                                <span class="back-stat-text">50+ Proyectos</span>
+                            </div>
+                        </div>
+                        <div class="back-services">
+                            <span class="service-tag tag-gold">Infraestructura</span>
+                            <span class="service-tag tag-gold">Edificaciones</span>
+                            <span class="service-tag tag-gold">Tecnología</span>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
         </div>
     </section>
+
+    <!-- TRUST SECTION -->
+    <section class="trust-section">
+        <div class="trust-content">
+            <h2>¿Por qué trabajar con nosotros?</h2>
+            <p class="trust-subtitle">Nuestras alianzas estratégicas nos permiten ofrecer soluciones integrales de primer nivel</p>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h4>Garantía Global</h4>
+                    <p>Respaldados por las mejores marcas mundiales</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                    </div>
+                    <h4>Cobertura Internacional</h4>
+                    <p>Socios con presencia en más de 100 países</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </div>
+                    <h4>Tecnología Avanzada</h4>
+                    <p>Las últimas innovaciones en cada proyecto</p>
+                </div>
+                <div class="trust-item">
+                    <div class="trust-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h4>Equipo Experto</h4>
+                    <p>Profesionales certificados por cada socio</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
+
+<script>
+// Animación de entrada con Intersection Observer
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.partner-card');
+    const trustItems = document.querySelectorAll('.trust-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, index * 100);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => observer.observe(card));
+    trustItems.forEach(item => observer.observe(item));
+});
+</script>
+
 </body>
 </html>
