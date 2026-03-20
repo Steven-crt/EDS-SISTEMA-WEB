@@ -12,32 +12,32 @@
 
 /* ---- VARIABLES ---- */
 :root {
-    --primary: #0066cc;
-    --primary-light: #e8f4ff;
+    --primary: #6bd9ff;
+    --primary-light: rgba(107, 217, 255, 0.14);
     
     --green: #10b981;
-    --green-light: #d1fae5;
+    --green-light: rgba(16, 185, 129, 0.18);
     --blue: #3b82f6;
-    --blue-light: #dbeafe;
+    --blue-light: rgba(59, 130, 246, 0.18);
     --orange: #f97316;
-    --orange-light: #ffedd5;
+    --orange-light: rgba(249, 115, 22, 0.18);
     --red: #ef4444;
-    --red-light: #fee2e2;
+    --red-light: rgba(239, 68, 68, 0.18);
     --purple: #8b5cf6;
-    --purple-light: #ede9fe;
+    --purple-light: rgba(139, 92, 246, 0.2);
     --gold: #f59e0b;
-    --gold-light: #fef3c7;
+    --gold-light: rgba(245, 158, 11, 0.22);
     
-    --bg: #f8fafc;
-    --bg-card: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --bg: radial-gradient(1200px circle at 15% 20%, rgba(14, 24, 38, 0.95) 0%, rgba(8, 12, 18, 0.98) 45%, rgba(5, 7, 10, 1) 100%);
+    --bg-card: rgba(10, 16, 24, 0.78);
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
     --text-muted: #94a3b8;
     
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-    --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
-    --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
-    --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
+    --shadow-md: 0 8px 20px rgba(0,0,0,0.35);
+    --shadow-lg: 0 20px 50px rgba(0,0,0,0.45);
+    --shadow-xl: 0 30px 80px rgba(0,0,0,0.55);
     
     --radius: 16px;
     --radius-lg: 24px;
@@ -52,6 +52,7 @@
 main {
     background: var(--bg);
     min-height: 100vh;
+    color: var(--text-primary);
 }
 
 /* ============================================================
@@ -62,7 +63,8 @@ main {
     padding: 80px 40px;
     text-align: center;
     overflow: hidden;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background: radial-gradient(600px circle at 20% 20%, rgba(107, 217, 255, 0.16) 0%, transparent 60%),
+        linear-gradient(135deg, rgba(11, 17, 26, 0.95) 0%, rgba(17, 27, 41, 0.95) 50%, rgba(11, 17, 26, 0.95) 100%);
 }
 
 .hero-bg {
@@ -122,7 +124,7 @@ main {
 
 .hero-badge {
     display: inline-block;
-    background: rgba(255,255,255,0.1);
+    background: rgba(107, 217, 255, 0.12);
     backdrop-filter: blur(10px);
     color: #fff;
     padding: 8px 20px;
@@ -131,7 +133,7 @@ main {
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 24px;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(107, 217, 255, 0.22);
 }
 
 .hero h1 {
@@ -303,7 +305,8 @@ main {
     padding: 40px 30px;
     text-align: center;
     box-shadow: var(--shadow-md);
-    border: 1px solid rgba(0,0,0,0.06);
+    border: 1px solid rgba(107, 217, 255, 0.14);
+    backdrop-filter: blur(12px);
 }
 
 .partner-badge {
@@ -431,6 +434,7 @@ main {
     flex-direction: column;
     color: #fff;
     box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(107, 217, 255, 0.14);
 }
 
 .back-blue { background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%); }

@@ -8,6 +8,13 @@
     padding: 60px 20px;
     min-height: calc(100vh - 80px);
     font-family: 'Poppins', sans-serif;
+    width: min(1200px, 94vw);
+    margin: 40px auto 60px;
+    background: var(--dragon-glass);
+    border: 1px solid var(--dragon-edge);
+    border-radius: 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5), inset 0 0 24px rgba(107, 217, 255, 0.08);
+    backdrop-filter: blur(12px);
 }
 
 .contact-title {
@@ -15,6 +22,7 @@
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 28px rgba(107, 217, 255, 0.2);
 }
 
 .contact-subtitle {

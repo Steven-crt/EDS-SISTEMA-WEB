@@ -13,16 +13,32 @@ header {
     height: 70px !important;
     padding: 0 5%;
     box-sizing: border-box;
-    background: rgba(10, 10, 10, 0.92);
+    background: linear-gradient(120deg, rgba(7, 10, 15, 0.92), rgba(13, 19, 29, 0.9));
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--dragon-edge);
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 0 !important;
     transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 26px rgba(107, 217, 255, 0.08);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(420px circle at 12% 50%, rgba(107, 217, 255, 0.16), transparent 70%);
+    opacity: 0.8;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    z-index: 0;
+}
+
+header > * {
+    position: relative;
+    z-index: 1;
 }
 
 header::after {
@@ -32,7 +48,7 @@ header::after {
     right: 0;
     bottom: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(240, 180, 41, 0.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(240, 180, 41, 0.55), transparent);
     opacity: 0.6;
     pointer-events: none;
 }
@@ -90,17 +106,17 @@ header nav a.btn {
     border: 2px solid #051c2e !important;
     border-radius: 5px !important;
     color: #fff !important;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02)) !important;
-    border-color: rgba(255, 255, 255, 0.16) !important;
+    background: linear-gradient(135deg, rgba(107, 217, 255, 0.08), rgba(240, 180, 41, 0.08)) !important;
+    border-color: rgba(107, 217, 255, 0.18) !important;
     position: relative;
     transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 header nav a.btn:hover {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border-color: rgba(255, 255, 255, 0.2) !important;
+    background: rgba(107, 217, 255, 0.12) !important;
+    border-color: rgba(107, 217, 255, 0.28) !important;
     transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 14px rgba(107, 217, 255, 0.22);
 }
 
 header nav a.btn:focus-visible {

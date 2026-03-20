@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
 
+:root {
+  --dragon-opacity: 0.52;
+  --dragon-cyan: #6bd9ff;
+  --dragon-amber: #f0b429;
+  --dragon-violet: #9b6bff;
+  --dragon-veil: rgba(7, 10, 15, 0.58);
+  --dragon-glass: rgba(9, 14, 22, 0.72);
+  --dragon-edge: rgba(107, 217, 255, 0.22);
+  --dragon-text: #e9f1ff;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -7,10 +18,21 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   font-family: "Questrial", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  color: white;
-  background: black;
+  color: var(--dragon-text);
+  background: radial-gradient(1200px circle at 20% 20%, #121a2a 0%, #0b0f17 45%, #05070b 100%);
+  transition: opacity 0.35s ease;
   /* Efecto de entrada (Fade In) para cuando se cargan las páginas */
   animation: fadeInPage 1s ease-in forwards;
+}
+
+body.page-fade-out {
+  opacity: 0;
+}
+
+h1,
+h2,
+h3 {
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45), 0 0 24px rgba(107, 217, 255, 0.12);
 }
 
 @keyframes fadeInPage {
@@ -775,4 +797,27 @@ background: #0ff;
         font-size: 11px;
         padding: 8px 16px;
     }
+}
+
+.dragon-widget {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5000;
+    pointer-events: none;
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    opacity: var(--dragon-opacity);
+    mix-blend-mode: screen;
+    filter: saturate(1.05) brightness(1.02);
+}
+
+.dragon-widget iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    pointer-events: none;
+    background: transparent;
 }
