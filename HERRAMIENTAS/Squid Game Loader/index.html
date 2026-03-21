@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,54 +8,22 @@
     <title>Squid game loader</title>
 </head>
 <body>
-    <main class="welcome">
-        <div class="welcome__panel">
-            <header class="welcome__header">
-                <div class="brand">
-                    <div class="brand__logo">
-                        <img src="../../BASE-DE-PAG-DE-EMPRESA-main/images/logo.png" alt="EDS logo">
-                    </div>
-                    <div class="brand__text">
-                        <span class="brand__title">EDS</span>
-                        <span class="brand__subtitle">Electric Data Solutions</span>
-                    </div>
-                </div>
-                <div class="signal" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </header>
-
-            <section class="welcome__hero">
-                <p class="welcome__kicker">Inicio</p>
-                <h1>Bienvenido</h1>
-                <p class="welcome__copy">Sistema de acceso activo. Preparando el entorno para tu ingreso.</p>
-                <div class="welcome__loaders" aria-hidden="true">
-                    <div class="loader">
-                        <svg viewBox="0 0 80 80">
-                            <circle cx="40" cy="40" r="32"></circle>
-                        </svg>
-                    </div>
-
-                    <div class="loader triangle">
-                        <svg viewBox="0 0 86 80">
-                            <polygon points="43 8 79 72 7 72"></polygon>
-                        </svg>
-                    </div>
-
-                    <div class="loader">
-                        <svg viewBox="0 0 80 80">
-                            <rect x="8" y="8" width="64" height="64"></rect>
-                        </svg>
-                    </div>
-                </div>
-                <div class="welcome__status">
-                    <span class="status__pulse" aria-hidden="true"></span>
-                    <span>Cargando sistema...</span>
-                </div>
-            </section>
-        </div>
-    </main>
+    <div class="loader">
+        <svg viewBox="0 0 80 80">
+            <circle id="test" cx="40" cy="40" r="32"></circle>
+        </svg>
+    </div>
+    
+    <div class="loader triangle">
+        <svg viewBox="0 0 86 80">
+            <polygon points="43 8 79 72 7 72"></polygon>
+        </svg>
+    </div>
+    
+    <div class="loader">
+        <svg viewBox="0 0 80 80">
+            <rect x="8" y="8" width="64" height="64"></rect>
+        </svg>
+    </div>
 </body>
 </html>

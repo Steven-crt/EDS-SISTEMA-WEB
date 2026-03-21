@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactos - EDI Edificaciones Inteligentes</title>
+    <title>Contactos - EDS Edificaciones Inteligentes</title>
     <!-- FontAwesome para los iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../style.css">
@@ -15,8 +15,8 @@
     <header>
         <div class="logo">
             <a href="../index.html" style="color: inherit; text-decoration: none; display:flex; align-items:center; gap:12px;">
-                <img src="../images/logo.png" alt="Logo EDI" style="height:42px; width:auto; border-radius:6px;">
-                <span>EDI EDIFICACIONES INTELIGENTES</span>
+                <img src="../images/logo.png" alt="Logo EDS" style="height:42px; width:auto; border-radius:6px;">
+                <span>EDS EDIFICACIONES INTELIGENTES</span>
             </a>
         </div>
         <button class="hamburger" id="hamburgerBtn" aria-label="Menú">
@@ -251,7 +251,7 @@
             const destinationEmail = "soporte_eds@edin-tel.com";
             
             // Construir el cuerpo del correo
-            const finalSubject = encodeURIComponent(subjectInput || "Contacto desde el sitio web EDI");
+            const finalSubject = encodeURIComponent(subjectInput || "Contacto desde el sitio web EDS");
             let finalBody = `Nombre / Empresa: ${name}\n`;
             finalBody += `Contacto / Red: ${contact}\n\n`;
             finalBody += `Mensaje:\n${bodyInput}`;

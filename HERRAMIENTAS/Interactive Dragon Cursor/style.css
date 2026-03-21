@@ -1,0 +1,132 @@
+:root {
+	--bg-deep: #0b1020;
+	--bg-mid: #1f335b;
+	--bg-accent: #2b1a3d;
+	--dragon-glow: rgba(111, 210, 255, 0.35);
+	--line-core: rgba(120, 235, 255, 0.95);
+	--line-glow: rgba(120, 235, 255, 0.55);
+	--line-accent: rgba(255, 120, 210, 0.7);
+}
+
+body,
+html {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: radial-gradient(1200px circle at 20% 20%, var(--bg-mid) 0%, var(--bg-deep) 55%, var(--bg-accent) 100%);
+	touch-action: none;
+}
+
+#tubes-canvas {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	z-index: 0;
+}
+
+#dragon-rays {
+	--ray-x: 50vw;
+	--ray-y: 50vh;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 90vmin;
+	height: 90vmin;
+	transform: translate(var(--ray-x), var(--ray-y)) translate(-50%, -50%);
+	background: repeating-conic-gradient(
+		from 0deg,
+		rgba(120, 235, 255, 0.18) 0deg,
+		rgba(120, 235, 255, 0.18) 8deg,
+		rgba(255, 120, 210, 0.12) 8deg,
+		rgba(255, 120, 210, 0.12) 14deg,
+		transparent 14deg,
+		transparent 24deg
+	);
+	mask-image: radial-gradient(circle, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0) 75%);
+	filter: blur(8px) drop-shadow(0 0 24px rgba(120, 235, 255, 0.35));
+	mix-blend-mode: screen;
+	opacity: 0.8;
+	pointer-events: none;
+	animation: rays-spin 14s linear infinite, rays-pulse 3.5s ease-in-out infinite;
+	z-index: 1;
+}
+
+
+svg {
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	cursor: pointer;
+	filter: sepia(20%) drop-shadow(0 0 10px var(--dragon-glow)) drop-shadow(0 0 18px var(--line-glow)) hue-rotate(0deg);
+	animation: dragon-hue 10s linear infinite;
+	z-index: 2;
+}
+
+svg path {
+	stroke: var(--line-core);
+	stroke-width: 0.7;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	paint-order: stroke fill;
+	vector-effect: non-scaling-stroke;
+	stroke-dasharray: 10 14;
+	animation: flow-lines 3.5s linear infinite, pulse-glow 2.4s ease-in-out infinite;
+	filter: drop-shadow(0 0 6px var(--line-glow)) drop-shadow(0 0 14px var(--line-accent));
+}
+
+@keyframes flow-lines {
+	0% {
+		stroke-dashoffset: 0;
+	}
+	100% {
+		stroke-dashoffset: -120;
+	}
+}
+
+@keyframes pulse-glow {
+	0%,
+	100% {
+		filter: drop-shadow(0 0 6px var(--line-glow)) drop-shadow(0 0 12px var(--line-accent));
+	}
+	50% {
+		filter: drop-shadow(0 0 10px var(--line-glow)) drop-shadow(0 0 20px var(--line-accent));
+	}
+}
+
+@keyframes dragon-hue {
+	0% {
+		filter: sepia(20%) drop-shadow(0 0 10px var(--dragon-glow)) drop-shadow(0 0 18px var(--line-glow)) hue-rotate(0deg);
+	}
+	50% {
+		filter: sepia(20%) drop-shadow(0 0 10px var(--dragon-glow)) drop-shadow(0 0 18px var(--line-glow)) hue-rotate(180deg);
+	}
+	100% {
+		filter: sepia(20%) drop-shadow(0 0 10px var(--dragon-glow)) drop-shadow(0 0 18px var(--line-glow)) hue-rotate(360deg);
+	}
+}
+
+@keyframes rays-spin {
+	0% {
+		transform: translate(var(--ray-x), var(--ray-y)) translate(-50%, -50%) rotate(0deg);
+	}
+	100% {
+		transform: translate(var(--ray-x), var(--ray-y)) translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+@keyframes rays-pulse {
+	0%,
+	100% {
+		opacity: 0.6;
+	}
+	50% {
+		opacity: 0.95;
+	}
+}
