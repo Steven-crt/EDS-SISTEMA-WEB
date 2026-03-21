@@ -1,14 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Questrial&display=swap");
 
 :root {
-  --dragon-opacity: 0.52;
+  --dragon-opacity: 0.6;
   --dragon-cyan: #6bd9ff;
-  --dragon-amber: #f0b429;
+  --dragon-amber: #f4a62a;
+  --dragon-ember: #ff6b2c;
   --dragon-violet: #9b6bff;
-  --dragon-veil: rgba(7, 10, 15, 0.58);
-  --dragon-glass: rgba(9, 14, 22, 0.72);
-  --dragon-edge: rgba(107, 217, 255, 0.22);
-  --dragon-text: #e9f1ff;
+  --dragon-veil: rgba(6, 8, 12, 0.68);
+  --dragon-glass: rgba(10, 12, 18, 0.82);
+  --dragon-edge: rgba(240, 180, 41, 0.25);
+  --dragon-text: #edf3ff;
 }
 
 body {
@@ -19,10 +20,53 @@ body {
   box-sizing: border-box;
   font-family: "Questrial", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: var(--dragon-text);
-  background: radial-gradient(1200px circle at 20% 20%, #121a2a 0%, #0b0f17 45%, #05070b 100%);
+  background:
+    radial-gradient(1100px circle at 12% 18%, rgba(255, 120, 60, 0.18) 0%, transparent 60%),
+    radial-gradient(900px circle at 82% 12%, rgba(107, 217, 255, 0.14) 0%, transparent 55%),
+    radial-gradient(800px circle at 50% 88%, rgba(240, 180, 41, 0.14) 0%, transparent 62%),
+    linear-gradient(160deg, #05060a 0%, #0b0f16 45%, #13090b 100%);
   transition: opacity 0.35s ease;
+  position: relative;
+  isolation: isolate;
   /* Efecto de entrada (Fade In) para cuando se cargan las páginas */
   animation: fadeInPage 1s ease-in forwards;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(700px circle at 15% 20%, rgba(255, 130, 70, 0.16) 0%, transparent 65%),
+    radial-gradient(500px circle at 88% 20%, rgba(107, 217, 255, 0.12) 0%, transparent 60%),
+    radial-gradient(520px circle at 40% 85%, rgba(240, 180, 41, 0.1) 0%, transparent 65%),
+    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 7px);
+  opacity: 0.65;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(1.5px 1.5px at 18% 30%, rgba(255, 200, 140, 0.6) 0 60%, transparent 100%),
+    radial-gradient(1px 1px at 75% 18%, rgba(255, 140, 90, 0.45) 0 60%, transparent 100%),
+    radial-gradient(2px 2px at 42% 70%, rgba(255, 160, 100, 0.45) 0 70%, transparent 100%),
+    radial-gradient(1.2px 1.2px at 68% 62%, rgba(255, 210, 150, 0.35) 0 60%, transparent 100%),
+    radial-gradient(2px 2px at 28% 85%, rgba(255, 130, 70, 0.4) 0 70%, transparent 100%);
+  opacity: 0.5;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  animation: emberDrift 18s ease-in-out infinite;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 body.page-fade-out {
@@ -38,6 +82,18 @@ h3 {
 @keyframes fadeInPage {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+@keyframes emberDrift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate3d(-1.5%, -1%, 0) scale(1.02);
+    opacity: 0.7;
+  }
 }
 
 header {
@@ -811,7 +867,21 @@ background: #0ff;
     justify-content: stretch;
     opacity: var(--dragon-opacity);
     mix-blend-mode: screen;
-    filter: saturate(1.05) brightness(1.02);
+    filter: saturate(1.2) brightness(1.08) contrast(1.05);
+    isolation: isolate;
+}
+
+.dragon-widget::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(500px circle at 18% 22%, rgba(255, 140, 80, 0.35) 0%, transparent 60%),
+      radial-gradient(380px circle at 78% 18%, rgba(107, 217, 255, 0.22) 0%, transparent 58%),
+      radial-gradient(620px circle at 50% 82%, rgba(240, 180, 41, 0.2) 0%, transparent 68%);
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: 0;
 }
 
 .dragon-widget iframe {
@@ -820,4 +890,6 @@ background: #0ff;
     border: 0;
     pointer-events: none;
     background: transparent;
+    position: relative;
+    z-index: 1;
 }
